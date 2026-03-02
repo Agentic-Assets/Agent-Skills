@@ -2,13 +2,12 @@
 
 ## Overview
 
-Personal collection of **16 specialized Claude Code skills** organized for PhD research, finance, real estate, and AI/ML development.
+Personal collection of **17 specialized Claude Code skills** organized for PhD research, finance, real estate, data visualization, and AI/ML development.
 
-**Version**: 0.4.2-custom  
-**Skills**: 16  
-**Reference Files**: 85  
-**Workflows**: 9  
-**Validation**: ✅ PASSED (0 errors, 5 minor warnings)
+**Version**: 0.4.2
+**Skills**: 17
+**Reference Files**: 89
+**Workflows**: 9
 
 ---
 
@@ -44,7 +43,10 @@ Personal collection of **16 specialized Claude Code skills** organized for PhD r
 17. **matplotlib** - Low-level plotting with full customization _(community)_
 18. **scientific-visualization** - Publication-ready journal figures _(community)_
 
-**Note**: Skills 1-11 can overlap categories (e.g., pandas-pro serves both research and finance)
+### 🧠 Context Engineering (1 skill)
+19. **context-engineering** - Audit, optimize, and architect the AI agent context layer
+
+**Note**: Some skills overlap categories (e.g., pandas-pro serves both research and finance). Unique skill count is 17.
 
 ---
 
@@ -151,12 +153,10 @@ mcp-developer → prompt-engineer → code-documenter
 python scripts/validate-skills.py
 ```
 
-**Result**: ✅ **PASSED**
-- ✓ All 16 skills validated
-- ✓ 0 errors
-- ✓ 5 minor warnings (historical count references, n8n-skills no reference files)
-- ✓ All frontmatter standardized
-- ✓ All triggers properly configured
+**Result**: Run `python scripts/validate-skills.py` to verify
+- 17 skill directories with SKILL.md files
+- All frontmatter standardized
+- All triggers properly configured
 
 ---
 

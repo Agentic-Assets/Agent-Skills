@@ -1,4 +1,4 @@
-# Contributing to Fullstack Dev Skills Plugin
+# Contributing to Agent Skills
 
 Thank you for your interest in contributing! This document provides guidelines for contributing to this project.
 
@@ -25,8 +25,8 @@ When suggesting a new skill:
 #### 1. Fork and Clone
 ```bash
 # Fork on GitHub, then:
-git clone https://github.com/jeffallan/claude-skills.git
-cd claude-skills
+git clone https://github.com/cas3526/Agent-Skills.git
+cd Agent-Skills
 ```
 
 #### 2. Create a Branch
@@ -100,13 +100,15 @@ output-format: code | document | report | analysis
 
 **Description Formula:**
 ```
-[Role] for [Domain]. Invoke for: [specific triggers]. Keywords: [search terms].
+Use when [specific triggering conditions]
 ```
 
 **Example:**
 ```yaml
-description: React specialist for production-grade web applications. Invoke for component architecture, hooks patterns, state management, Server Components. Keywords: React, JSX, hooks, useState, use(), Suspense.
+description: Use when creating or revising academic paper sections, formatting tables/figures for journal submission, or writing referee responses.
 ```
+
+**Important:** Descriptions must be TRIGGER-ONLY. Never summarize the workflow. See CLAUDE.md for details.
 
 ### Required Sections (In Order)
 
@@ -294,7 +296,7 @@ Before submitting:
 
 ## Questions?
 
-- Open a [GitHub Discussion](https://github.com/jeffallan/claude-skills/discussions)
+- Open a [GitHub Discussion](https://github.com/cas3526/Agent-Skills/discussions)
 - Comment on relevant issues
 - Reach out to maintainers
 

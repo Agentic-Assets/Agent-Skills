@@ -4,8 +4,8 @@
 
 **Version:** v<!-- VERSION -->0.4.2<!-- /VERSION -->
 
-- **<!-- SKILL_COUNT -->16<!-- /SKILL_COUNT --> Skills** across 5 domains
-- **<!-- REFERENCE_COUNT -->85<!-- /REFERENCE_COUNT --> Reference Files** with progressive disclosure architecture
+- **<!-- SKILL_COUNT -->17<!-- /SKILL_COUNT --> Skills** across 5 domains
+- **<!-- REFERENCE_COUNT -->89<!-- /REFERENCE_COUNT --> Reference Files** with progressive disclosure architecture
 - **<!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Project Workflow Commands**
 - **50% Token Reduction** through selective disclosure architecture
 
@@ -15,7 +15,8 @@ This is a personal skill collection customized for Python development, data anal
 
 ## Skills by Domain
 
-### 📚 PhD Academic Business Research (3 skills)
+### 📚 PhD Academic Business Research (4 skills)
+- **academic-writing** - LaTeX manuscript drafting and revision for finance, economics, and real estate research
 - **pyfixest-latex** - PyFixest econometric models to publication-quality LaTeX
 - **stata-accounting-research** - STATA code patterns from published accounting research
 - **pandas-pro** - Data manipulation and analysis for research datasets
@@ -38,6 +39,13 @@ This is a personal skill collection customized for Python development, data anal
 - **code-reviewer** - Code reviews, quality audits, security checks
 - **debugging-wizard** - Systematic debugging, error investigation
 - **n8n-skills** - n8n workflow automation
+
+### 📊 Data Visualization (2 skills)
+- **matplotlib** - Low-level plotting with full customization
+- **scientific-visualization** - Publication-ready multi-panel figures with journal formatting
+
+### 🧠 Context Engineering (1 skill)
+- **context-engineering** - Audit, optimize, and architect the AI agent context layer
 
 ---
 
@@ -183,7 +191,8 @@ This is a personal skill collection customized for Python development, data anal
 
 ### v0.4.2 (Current)
 - Customized from jeffallan/claude-skills template
-- Reduced from 65 skills to 12 focused skills
+- 17 specialized skills across 6 domains
+- Added academic-writing, context-engineering, matplotlib, scientific-visualization
 - Updated documentation to reflect personal collection
 - Fixed validation issues and standardized frontmatter
 - Created domain-specific skill guide

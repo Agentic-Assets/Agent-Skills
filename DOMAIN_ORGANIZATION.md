@@ -1,27 +1,32 @@
 # Agent Skills - Domain Organization
 
-This repository contains 12 specialized Claude Code skills organized around five professional domains:
+This repository contains 17 specialized Claude Code skills organized around six professional domains:
 
-## 📚 PhD Academic Business Research (3 skills)
+## 📚 PhD Academic Business Research (4 skills)
 
-**Primary Focus**: Econometric analysis, publication-ready output, research data manipulation
+**Primary Focus**: Academic writing, econometric analysis, publication-ready output, research data manipulation
 
-1. **pyfixest-latex** - Generate publication-quality LaTeX tables and figures from PyFixest models
+1. **academic-writing** - LaTeX manuscript drafting and revision for finance, economics, and real estate research
+   - Section-by-section paper writing (Introduction, Results, Discussion)
+   - Referee response preparation
+   - Journal-specific formatting (JF, JFE, RFS, Real Estate Economics)
+
+2. **pyfixest-latex** - Generate publication-quality LaTeX tables and figures from PyFixest models
    - DiD, event studies, panel regression
    - Regression tables, summary statistics
    - Publication-ready plots
 
-2. **stata-accounting-research** - STATA code patterns from 126+ published JAR papers
+3. **stata-accounting-research** - STATA code patterns from 126+ published JAR papers
    - Entropy balancing, PSM, DiD, RDD, IV
    - Event studies (CAR/BHAR), survival analysis
    - Fama-MacBeth, fixed effects, clustering
 
-3. **pandas-pro** - Data manipulation and analysis for research datasets
+4. **pandas-pro** - Data manipulation and analysis for research datasets
    - Data cleaning, transformation, aggregation
    - Time series analysis
    - Panel data preparation
 
-**Common Workflow**: wrds-data-pull → pandas-pro → pyfixest-latex/stata-accounting-research → code-documenter
+**Common Workflow**: wrds-data-pull → pandas-pro → pyfixest-latex/stata-accounting-research → academic-writing → code-documenter
 
 ---
 
@@ -115,6 +120,38 @@ This repository contains 12 specialized Claude Code skills organized around five
 
 ---
 
+## 📊 Data Visualization (2 skills)
+
+**Primary Focus**: Custom plotting and publication-quality figures
+
+1. **matplotlib** - Low-level plotting library for full customization
+   - Fine-grained control over every plot element
+   - Novel and custom visualization types
+   - Both pyplot and object-oriented API
+
+2. **scientific-visualization** - Publication-ready multi-panel figures
+   - Journal-specific formatting (Nature, Science, Cell)
+   - Significance annotations, error bars
+   - Colorblind-safe palettes, PDF/EPS/TIFF export
+
+**Common Workflow**: pandas-pro → matplotlib/scientific-visualization → academic-writing
+
+---
+
+## 🧠 Context Engineering (1 skill)
+
+**Primary Focus**: AI agent context optimization
+
+1. **context-engineering** - Audit, optimize, and architect the AI agent context layer
+   - CLAUDE.md file optimization
+   - Hooks, slash commands, skills assessment
+   - Context maturity scoring and gap analysis
+   - Bootstrap context for new projects
+
+**Common Workflow**: context-engineering → (audit/optimize CLAUDE.md, hooks, skills)
+
+---
+
 ## Cross-Domain Workflows
 
 ### Research Data Pipeline
@@ -175,10 +212,10 @@ Browse hundreds of skills at **[skills.sh](https://skills.sh/)**
 
 ## Skill Statistics
 
-- **Total Skills**: 12
-- **Reference Files**: 52
+- **Total Skills**: 17
+- **Reference Files**: 89
 - **Workflows**: 9
-- **Version**: 0.4.2-custom
+- **Version**: 0.4.2
 - **Recommended Additions**: 4 official document skills (pdf, xlsx, docx, pptx)
 
 ---
