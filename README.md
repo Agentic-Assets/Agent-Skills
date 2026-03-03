@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,25,27&height=200&section=header&text=Agent%20Skills&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=12%20Skills%20%E2%80%A2%209%20Workflows%20%E2%80%A2%20Personal%20Skill%20Collection&descSize=20&descAlignY=55" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,25,27&height=200&section=header&text=Agent%20Skills&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=17%20Skills%20%E2%80%A2%209%20Workflows%20%E2%80%A2%20Personal%20Skill%20Collection&descSize=20&descAlignY=55" width="100%"/>
 </p>
 
 <p align="center">
@@ -9,11 +9,11 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=A855F7&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=80&lines=Specialized+skills+for+Python+development,+data+analysis,;research,+automation,+and+AI+integration" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=A855F7&center=true&vCenter=true&multiline=true&repeat=false&width=800&height=80&lines=Specialized+skills+for+PhD+research,+finance,+real+estate,;data+visualization,+automation,+and+AI+integration" alt="Typing SVG" />
 </p>
 
 <p align="center">
-  <strong>🎯 <!-- SKILL_COUNT -->16<!-- /SKILL_COUNT --> Skills</strong> • <strong>🚀 <!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows</strong> • <strong>🧠 Context Engineering</strong> • <strong>📖 Progressive Disclosure</strong>
+  <strong>🎯 <!-- SKILL_COUNT -->17<!-- /SKILL_COUNT --> Skills</strong> • <strong>🚀 <!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows</strong> • <strong>🧠 Context Engineering</strong> • <strong>📖 Progressive Disclosure</strong>
 </p>
 
 ---
@@ -59,13 +59,17 @@ Skills activate automatically based on your requests:
 # Debugging
 "Help me debug this stack trace"
 → Activates: debugging-wizard
+
+# Context Engineering
+"Audit my CLAUDE.md and agent context setup"
+→ Activates: context-engineering
 ```
 
 ---
 
 ## Skills Overview
 
-**<!-- SKILL_COUNT -->16<!-- /SKILL_COUNT --> specialized skills** organized by domain:
+**<!-- SKILL_COUNT -->17<!-- /SKILL_COUNT --> specialized skills** organized by domain:
 
 ### 📚 PhD Academic Business Research (4 skills)
 - **academic-writing**: LaTeX manuscript drafting and revision for finance, economics, and real estate research
@@ -96,6 +100,9 @@ Skills activate automatically based on your requests:
 ### 📊 Data Visualization (2 skills)
 - **matplotlib**: Low-level plotting library for full customization, novel plot types, fine-grained control
 - **scientific-visualization**: Publication-ready multi-panel figures with journal-specific formatting (Nature, Science, Cell)
+
+### 🧠 Context Engineering (1 skill)
+- **context-engineering**: Audit, optimize, and architect the AI agent context layer (CLAUDE.md, hooks, commands, skills)
 
 See **[SKILLS_GUIDE.md](SKILLS_GUIDE.md)** for when to use each skill, workflows, and examples.
 
@@ -162,8 +169,8 @@ skills/fastapi-expert/
 4. 50% faster initial responses, surgical precision when needed
 
 **Stats:**
-- <!-- SKILL_COUNT -->16<!-- /SKILL_COUNT --> skills
-- <!-- REFERENCE_COUNT -->85<!-- /REFERENCE_COUNT --> reference files
+- <!-- SKILL_COUNT -->17<!-- /SKILL_COUNT --> skills
+- <!-- REFERENCE_COUNT -->89<!-- /REFERENCE_COUNT --> reference files
 - ~50% token reduction through progressive disclosure
 
 ---
@@ -246,24 +253,34 @@ Agent-Skills/
 ├── .claude-plugin/
 │   ├── plugin.json           # Plugin metadata
 │   └── marketplace.json      # Marketplace configuration
-├── skills/                   # 12 specialized skills
+├── skills/                   # 17 specialized skills
+│   ├── academic-writing/
 │   ├── code-documenter/
 │   ├── code-reviewer/
+│   ├── context-engineering/
+│   ├── cre-investment-analysis/
 │   ├── debugging-wizard/
 │   ├── fastapi-expert/
+│   ├── matplotlib/
 │   ├── mcp-developer/
 │   ├── ml-pipeline/
+│   ├── n8n-skills/
 │   ├── pandas-pro/
 │   ├── prompt-engineer/
 │   ├── pyfixest-latex/
-│   ├── cre-investment-analysis/
+│   ├── scientific-visualization/
 │   ├── stata-accounting-research/
-│   └── n8n-skills/
+│   └── wrds-data-pull/
+├── commands/                 # 9 workflow commands
+│   ├── common-ground/
+│   └── project/
 ├── scripts/
 │   ├── update-docs.py        # Update version and counts
 │   └── validate-skills.py    # Validate skill integrity
 ├── docs/
-│   └── ...
+│   ├── ATLASSIAN_MCP_SETUP.md
+│   ├── COMMON_GROUND.md
+│   └── WORKFLOW_COMMANDS.md
 ├── README.md
 ├── SKILLS_GUIDE.md          # Quick reference guide
 ├── CLAUDE.md                # Project configuration
@@ -408,4 +425,4 @@ Originally forked from [jeffallan/claude-skills](https://github.com/jeffallan/cl
 
 ---
 
-**Built for Claude Code** | **<!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows** | **<!-- REFERENCE_COUNT -->85<!-- /REFERENCE_COUNT --> Reference Files** | **<!-- SKILL_COUNT -->16<!-- /SKILL_COUNT --> Skills**
+**Built for Claude Code** | **<!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows** | **<!-- REFERENCE_COUNT -->89<!-- /REFERENCE_COUNT --> Reference Files** | **<!-- SKILL_COUNT -->17<!-- /SKILL_COUNT --> Skills**

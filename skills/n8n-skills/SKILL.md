@@ -1,6 +1,16 @@
 ---
 name: n8n-skills
 description: Use when building n8n workflows, configuring nodes, setting up triggers, implementing data transformations, or integrating AI agents into automation workflows.
+triggers:
+  - n8n
+  - workflow automation
+  - webhook
+  - workflow trigger
+  - n8n node
+  - automation
+role: specialist
+scope: implementation
+output-format: code
 license: MIT
 metadata:
   source: https://github.com/haunchen/n8n-skills

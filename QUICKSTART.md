@@ -75,12 +75,14 @@ Try these commands to verify skills are working:
 ## First Steps
 
 ### 1. Understand What You Have
-**<!-- SKILL_COUNT -->16<!-- /SKILL_COUNT --> skills** covering:
-- **Development & Code Quality (3)**: code-documenter, code-reviewer, debugging-wizard
-- **Python Development (3)**: fastapi-expert, pandas-pro, ml-pipeline
-- **AI & Integration (2)**: mcp-developer, prompt-engineer
-- **Research & Analysis (3)**: pyfixest-latex, cre-investment-analysis, stata-accounting-research
-- **Automation (1)**: n8n-skills
+**<!-- SKILL_COUNT -->17<!-- /SKILL_COUNT --> skills** covering:
+- **PhD Academic Research (4)**: academic-writing, pyfixest-latex, stata-accounting-research, pandas-pro
+- **Financial Analysis (3)**: wrds-data-pull, pandas-pro, pyfixest-latex
+- **Real Estate (1)**: cre-investment-analysis
+- **AI/ML (3)**: ml-pipeline, prompt-engineer, mcp-developer
+- **Development & Code Quality (5)**: fastapi-expert, code-documenter, code-reviewer, debugging-wizard, n8n-skills
+- **Data Visualization (2)**: matplotlib, scientific-visualization
+- **Context Engineering (1)**: context-engineering
 
 ### 2. Common Use Cases
 
@@ -157,6 +159,10 @@ Claude: [Activates n8n-skills]
 | "Create an MCP server" | mcp-developer |
 | "Build an n8n workflow" | n8n-skills |
 | "Add docstrings to these functions" | code-documenter |
+| "Create a custom scatter plot with annotations" | matplotlib |
+| "Create a Nature-style multi-panel figure" | scientific-visualization |
+| "Audit my project's CLAUDE.md setup" | context-engineering |
+| "Write the Results section for my paper" | academic-writing |
 | **"Extract data from this PDF offering memo"** | **pdf** (official skill) |
 | **"Create a financial model in Excel"** | **xlsx** (official skill) |
 | **"Analyze this PDF appraisal + Excel rent roll"** | **pdf + xlsx + cre-investment-analysis** |
@@ -242,31 +248,41 @@ python scripts/update-docs.py
 Print or save this for quick reference:
 
 ```
-PYTHON DEVELOPMENT
-├─ API: fastapi-expert
-├─ Data: pandas-pro
-└─ ML: ml-pipeline
-
-AI & INTEGRATION
-├─ MCP: mcp-developer
-└─ Prompts: prompt-engineer
-
-RESEARCH & ANALYSIS
+PHD ACADEMIC RESEARCH
+├─ Writing: academic-writing
 ├─ Econometrics (Python): pyfixest-latex
 ├─ Econometrics (STATA): stata-accounting-research
-└─ Real Estate: cre-investment-analysis
+└─ Data: pandas-pro
 
-AUTOMATION
-└─ Workflows: n8n-skills
+FINANCIAL ANALYSIS
+├─ WRDS Data: wrds-data-pull
+└─ Analysis: pandas-pro + pyfixest-latex
 
-CODE QUALITY
+REAL ESTATE
+└─ CRE Analysis: cre-investment-analysis
+
+AI/ML
+├─ Pipelines: ml-pipeline
+├─ Prompts: prompt-engineer
+└─ MCP: mcp-developer
+
+DEVELOPMENT
+├─ API: fastapi-expert
 ├─ Debug: debugging-wizard
 ├─ Review: code-reviewer
-└─ Document: code-documenter
+├─ Document: code-documenter
+└─ Automation: n8n-skills
+
+DATA VISUALIZATION
+├─ Custom Plots: matplotlib
+└─ Journal Figures: scientific-visualization
+
+CONTEXT ENGINEERING
+└─ Agent Context: context-engineering
 
 COMMON WORKFLOWS
+├─ Research Paper: wrds-data-pull → pandas-pro → pyfixest-latex → academic-writing
 ├─ API Development: fastapi-expert → debugging-wizard → code-documenter → code-reviewer
-├─ Data Analysis: pandas-pro → pyfixest-latex/stata-accounting-research → code-documenter
 ├─ ML Pipeline: pandas-pro → ml-pipeline → prompt-engineer → code-documenter
 ├─ Business Analysis: pandas-pro → cre-investment-analysis → code-documenter
 └─ Automation: n8n-skills → mcp-developer → debugging-wizard

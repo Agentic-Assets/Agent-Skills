@@ -4,7 +4,8 @@
 
 This personal skill collection supports work across five domains:
 
-### 📚 PhD Academic Business Research (3 skills)
+### 📚 PhD Academic Business Research (4 skills)
+- **academic-writing**: LaTeX manuscript drafting and revision for finance, economics, and real estate research
 - **pyfixest-latex**: PyFixest econometric models to publication-quality LaTeX (DiD, event studies, panel regression)
 - **stata-accounting-research**: STATA code patterns from published accounting research (entropy balancing, PSM, DiD, RDD, IV)
 - **pandas-pro**: DataFrame manipulation, data cleaning, aggregation, time series analysis
@@ -28,11 +29,23 @@ This personal skill collection supports work across five domains:
 - **debugging-wizard**: Systematic debugging, error investigation, root cause analysis
 - **n8n-skills**: n8n workflow automation, node configuration, workflow patterns
 
+### 📊 Data Visualization (2 skills)
+- **matplotlib**: Low-level plotting with full customization, novel plot types, fine-grained control
+- **scientific-visualization**: Publication-ready multi-panel figures with journal-specific formatting (Nature, Science, Cell)
+
+### 🧠 Context Engineering (1 skill)
+- **context-engineering**: Audit, optimize, and architect the AI agent context layer (CLAUDE.md, hooks, commands, skills)
+
 ---
 
 ## When to Use Each Skill
 
 ### PhD Academic Business Research
+
+**academic-writing**
+- Use when: Creating or revising academic paper sections, formatting for journal submission, writing referee responses
+- Triggers: academic writing, research paper, LaTeX manuscript, journal submission, referee response, JF, JFE, RFS
+- Output: LaTeX manuscript sections, referee response letters
 
 **pyfixest-latex**
 - Use when: Generating regression tables, event study plots, or summary statistics for academic papers
@@ -112,6 +125,25 @@ This personal skill collection supports work across five domains:
 - Triggers: n8n, workflow automation, webhook, workflow trigger
 - Output: n8n workflow configurations
 
+### Data Visualization
+
+**matplotlib**
+- Use when: Creating custom plots, fine-grained control over figure elements, novel visualization types
+- Triggers: matplotlib, plot, visualization, figure, chart, pyplot, custom plot
+- Output: Python code for matplotlib figures
+
+**scientific-visualization**
+- Use when: Creating publication-ready multi-panel figures with journal-specific formatting
+- Triggers: publication figure, journal figure, multi-panel plot, Nature figure, Science figure, significance annotation
+- Output: Python code for journal-quality figures
+
+### Context Engineering
+
+**context-engineering**
+- Use when: Auditing or optimizing CLAUDE.md files, hooks, commands, or skills for AI agent effectiveness
+- Triggers: CLAUDE.md, context engineering, agent instructions, agent memory, context audit, context architecture
+- Output: Audit reports, optimized context files, gap analyses
+
 ---
 
 ## Common Workflows
@@ -172,6 +204,7 @@ This personal skill collection supports work across five domains:
 ### Research & Analysis Tasks
 
 **What type of analysis?**
+- **Academic paper writing** → academic-writing
 - **Econometric (Python)** → pyfixest-latex
 - **Econometric (STATA)** → stata-accounting-research
 - **Data manipulation** → pandas-pro
@@ -187,12 +220,19 @@ This personal skill collection supports work across five domains:
 - **Workflow automation** → n8n-skills
 - **LLM application** → prompt-engineer
 
+### Visualization Tasks
+
+**What type of figure?**
+- **Custom/exploratory plots** → matplotlib
+- **Publication-ready journal figures** → scientific-visualization
+
 ### Code Quality Tasks
 
 **What do you need?**
 - **Documentation** → code-documenter
 - **Code review** → code-reviewer
 - **Debugging** → debugging-wizard
+- **Agent context optimization** → context-engineering
 
 ---
 
@@ -311,6 +351,7 @@ wrds-data-pull → pandas-pro → ml-pipeline → mcp-developer → prompt-engin
 
 | Task | Skills to Use |
 |------|---------------|
+| Write academic paper sections | academic-writing |
 | Pull financial data from WRDS | wrds-data-pull |
 | Run econometric analysis (Python) | pyfixest-latex |
 | Run econometric analysis (STATA) | stata-accounting-research |
@@ -324,3 +365,6 @@ wrds-data-pull → pandas-pro → ml-pipeline → mcp-developer → prompt-engin
 | Review code quality | code-reviewer |
 | Fix bugs | debugging-wizard |
 | Automate workflows | n8n-skills |
+| Create custom plots | matplotlib |
+| Create publication figures | scientific-visualization |
+| Audit/optimize agent context | context-engineering |

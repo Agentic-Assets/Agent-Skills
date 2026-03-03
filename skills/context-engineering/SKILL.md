@@ -1,6 +1,20 @@
 ---
 name: context-engineering
-description: "Advanced AI agent context engineering: audit, optimize, and architect the context layer (CLAUDE.md files, hooks, slash commands, skills, IDE rules) that governs how AI coding agents understand and operate within any codebase. Use this skill when: (1) auditing or reviewing the current state of context engineering in a project, (2) optimizing, refining, or fixing existing context files (CLAUDE.md, hooks, commands, skills), (3) identifying missing context that would improve agent effectiveness, (4) bootstrapping context engineering from scratch for a new or under-documented project, (5) diagnosing why an AI agent is underperforming or making repeated mistakes, (6) sizing and budgeting context (how much is enough, what types matter most), (7) the user mentions CLAUDE.md strategy, context quality, agent instructions, agent memory, or context architecture."
+description: Use when auditing, optimizing, or architecting the AI agent context layer (CLAUDE.md files, hooks, slash commands, skills, IDE rules) for any codebase, bootstrapping context engineering from scratch, diagnosing agent underperformance, or when the user mentions CLAUDE.md strategy, context quality, agent instructions, or context architecture.
+triggers:
+  - CLAUDE.md
+  - context engineering
+  - agent instructions
+  - agent memory
+  - context audit
+  - context architecture
+  - hooks
+  - slash commands
+  - agent underperforming
+  - IDE rules
+role: architect
+scope: design
+output-format: report
 ---
 
 # Context Engineering
