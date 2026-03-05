@@ -4,8 +4,8 @@
 
 **Version:** v<!-- VERSION -->0.4.2<!-- /VERSION -->
 
-- **<!-- SKILL_COUNT -->17<!-- /SKILL_COUNT --> Skills** across 5 domains
-- **<!-- REFERENCE_COUNT -->89<!-- /REFERENCE_COUNT --> Reference Files** with progressive disclosure architecture
+- **<!-- SKILL_COUNT -->18<!-- /SKILL_COUNT --> Skills** across 5 domains
+- **<!-- REFERENCE_COUNT -->91<!-- /REFERENCE_COUNT --> Reference Files** with progressive disclosure architecture
 - **<!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Project Workflow Commands**
 - **50% Token Reduction** through selective disclosure architecture
 

@@ -11,7 +11,7 @@
     {
       "name": "agent-skills",
       "source": "./",
-      "description": "17 specialized skills across 6 domains: PhD academic research, financial analysis, real estate, AI/ML, development, and data visualization. Includes 9 project workflow commands for epic planning, discovery, execution, and retrospectives.",
+      "description": "18 specialized skills across 6 domains: PhD academic research, financial analysis, real estate, AI/ML, development, and data visualization. Includes 9 project workflow commands for epic planning, discovery, execution, and retrospectives.",
       "version": "0.4.2",
       "author": {
         "name": "cas3526",

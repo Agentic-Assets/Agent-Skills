@@ -1,7 +1,7 @@
 {
   "name": "agent-skills",
   "version": "0.4.2",
-  "description": "Personal skill collection with 17 specialized skills for PhD research, finance, real estate, AI/ML, and Python development. Features progressive disclosure architecture for optimized token usage.",
+  "description": "Personal skill collection with 18 specialized skills for PhD research, finance, real estate, AI/ML, and Python development. Features progressive disclosure architecture for optimized token usage.",
   "author": {
     "name": "cas3526",
     "email": "github@cas3526"
