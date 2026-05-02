@@ -1,0 +1,46 @@
+{
+  "skill_name": "social-media-content",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I need some post ideas for this week. I just got back from the AREUEA conference and I'm also about to launch a new AI consulting engagement with a regional multifamily operator.",
+      "expected_output": "5-7 post ideas spanning academic and business content pillars, with platform recommendations for each",
+      "files": [],
+      "expectations": [
+        "Provides at least 5 distinct post ideas",
+        "Includes ideas for both academic (conference) and business (AI consulting) content",
+        "Recommends specific platforms for each idea",
+        "Ideas are specific and actionable, not generic",
+        "Does not reveal hypothetical client details"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Help me write a LinkedIn post about my new working paper on political connections and firm value. The key finding is that connections to local politicians matter more than federal ones for real estate firms.",
+      "expected_output": "A complete, ready-to-post LinkedIn post with a strong hook, body, CTA, and hashtags",
+      "files": [],
+      "expectations": [
+        "Post is under 3000 characters",
+        "First two lines contain a compelling hook",
+        "Includes the specific finding about local vs federal connections",
+        "Ends with a question or call to action",
+        "Includes 3-5 relevant hashtags",
+        "Tone is conversational but credible, not overly academic"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Plan my social media for next week. I want to share some thoughts on how AI agents are changing CRE underwriting. Give me a full calendar with drafts.",
+      "expected_output": "A 2-3 post content calendar with specific days, platforms, and complete draft content for each post",
+      "files": [],
+      "expectations": [
+        "Provides 2-3 posts spread across the week",
+        "Each post has a specific day and suggested time",
+        "Each post has complete draft text ready to post",
+        "Posts are adapted for their respective platforms",
+        "Content specifically addresses AI agents in CRE underwriting",
+        "Includes hashtags for each post"
+      ]
+    }
+  ]
+}

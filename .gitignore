@@ -34,3 +34,7 @@ yarn-error.log*
 
 # Awesome list submission workspace
 submits/
+
+# skill-creator eval workspaces (transient)
+*-workspace/
+skills/*-workspace/
