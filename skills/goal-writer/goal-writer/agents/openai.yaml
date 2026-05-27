@@ -1,4 +1,0 @@
-interface:
-  display_name: "Goal Writer"
-  short_description: "Write auditable Codex Goal files"
-  default_prompt: "Write a Codex Goal file for this objective, using the required dated filename and 3000-3500 character target."
