@@ -33,8 +33,9 @@ This personal skill collection supports work across five domains:
 - **matplotlib**: Low-level plotting with full customization, novel plot types, fine-grained control
 - **scientific-visualization**: Publication-ready multi-panel figures with journal-specific formatting (Nature, Science, Cell)
 
-### 🧠 Context Engineering (1 skill)
+### 🧠 Context Engineering (2 skills)
 - **context-engineering**: Audit, optimize, and architect the AI agent context layer (CLAUDE.md, hooks, commands, skills)
+- **context-guidance-audit**: Two-phase subagent audit and remediation of agent guidance (CLAUDE.md, docs, skills references)
 
 ---
 
@@ -143,6 +144,11 @@ This personal skill collection supports work across five domains:
 - Use when: Auditing or optimizing CLAUDE.md files, hooks, commands, or skills for AI agent effectiveness
 - Triggers: CLAUDE.md, context engineering, agent instructions, agent memory, context audit, context architecture
 - Output: Audit reports, optimized context files, gap analyses
+
+**context-guidance-audit**
+- Use when: Running a full-repo guidance health check with subagents — stale docs, contradictory rules, broken skill paths, strategy drift
+- Triggers: context guidance audit, agent guidance audit, CLAUDE.md drift, stale agent docs, guidance deep dive, context-guidance-audit
+- Output: Dated audit reports (Phase 1), remediated guidance files with remediation logs (Phase 2); ephemeral review folder deleted after acceptance
 
 ---
 
@@ -368,3 +374,4 @@ wrds-data-pull → pandas-pro → ml-pipeline → mcp-developer → prompt-engin
 | Create custom plots | matplotlib |
 | Create publication figures | scientific-visualization |
 | Audit/optimize agent context | context-engineering |
+| Full guidance audit + remediation (two-phase subagents) | context-guidance-audit |

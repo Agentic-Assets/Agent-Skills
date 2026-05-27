@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- **context-guidance-audit** — Two-phase, multi-subagent audit and remediation playbook for codebase guidance (CLAUDE.md, AGENTS.md, docs, skills/agents references). Phase 1 is read-only reports; Phase 2 verifies and fixes guidance. Includes `automation-prompt.md`, scope-split reference, and `commands/context-guidance-audit.md`.
+
 ## [0.4.2] - 2026-03-02
 
 ### Changed

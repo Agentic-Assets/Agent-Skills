@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <strong>🎯 <!-- SKILL_COUNT -->18<!-- /SKILL_COUNT --> Skills</strong> • <strong>🚀 <!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows</strong> • <strong>🧠 Context Engineering</strong> • <strong>📖 Progressive Disclosure</strong>
+  <strong>🎯 <!-- SKILL_COUNT -->23<!-- /SKILL_COUNT --> Skills</strong> • <strong>🚀 <!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows</strong> • <strong>🧠 Context Engineering</strong> • <strong>📖 Progressive Disclosure</strong>
 </p>
 
 ---
@@ -61,6 +61,10 @@ Skills activate automatically based on your requests:
 → Activates: debugging-wizard
 
 # Context Engineering
+"Run a two-phase context guidance audit on this repo"
+→ Activates: context-guidance-audit
+
+# Context Engineering
 "Audit my CLAUDE.md and agent context setup"
 → Activates: context-engineering
 ```
@@ -69,7 +73,7 @@ Skills activate automatically based on your requests:
 
 ## Skills Overview
 
-**<!-- SKILL_COUNT -->18<!-- /SKILL_COUNT --> specialized skills** organized by domain:
+**<!-- SKILL_COUNT -->23<!-- /SKILL_COUNT --> specialized skills** organized by domain:
 
 ### 📚 PhD Academic Business Research (4 skills)
 - **academic-writing**: LaTeX manuscript drafting and revision for finance, economics, and real estate research
@@ -101,8 +105,9 @@ Skills activate automatically based on your requests:
 - **matplotlib**: Low-level plotting library for full customization, novel plot types, fine-grained control
 - **scientific-visualization**: Publication-ready multi-panel figures with journal-specific formatting (Nature, Science, Cell)
 
-### 🧠 Context Engineering (1 skill)
+### 🧠 Context Engineering (2 skills)
 - **context-engineering**: Audit, optimize, and architect the AI agent context layer (CLAUDE.md, hooks, commands, skills)
+- **context-guidance-audit**: Two-phase subagent-driven deep audit and remediation of agent guidance docs (read-only findings, then verified fixes)
 
 See **[SKILLS_GUIDE.md](SKILLS_GUIDE.md)** for when to use each skill, workflows, and examples.
 
@@ -169,8 +174,8 @@ skills/fastapi-expert/
 4. 50% faster initial responses, surgical precision when needed
 
 **Stats:**
-- <!-- SKILL_COUNT -->18<!-- /SKILL_COUNT --> skills
-- <!-- REFERENCE_COUNT -->91<!-- /REFERENCE_COUNT --> reference files
+- <!-- SKILL_COUNT -->23<!-- /SKILL_COUNT --> skills
+- <!-- REFERENCE_COUNT -->99<!-- /REFERENCE_COUNT --> reference files
 - ~50% token reduction through progressive disclosure
 
 ---
@@ -258,6 +263,7 @@ Agent-Skills/
 │   ├── code-documenter/
 │   ├── code-reviewer/
 │   ├── context-engineering/
+│   ├── context-guidance-audit/
 │   ├── cre-investment-analysis/
 │   ├── debugging-wizard/
 │   ├── fastapi-expert/
@@ -425,4 +431,4 @@ Originally forked from [jeffallan/claude-skills](https://github.com/jeffallan/cl
 
 ---
 
-**Built for Claude Code** | **<!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows** | **<!-- REFERENCE_COUNT -->91<!-- /REFERENCE_COUNT --> Reference Files** | **<!-- SKILL_COUNT -->18<!-- /SKILL_COUNT --> Skills**
+**Built for Claude Code** | **<!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows** | **<!-- REFERENCE_COUNT -->99<!-- /REFERENCE_COUNT --> Reference Files** | **<!-- SKILL_COUNT -->23<!-- /SKILL_COUNT --> Skills**
