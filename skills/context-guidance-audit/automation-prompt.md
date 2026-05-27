@@ -27,7 +27,7 @@ Discover guidance artifacts before scoping (`Glob **/CLAUDE.md`, root `AGENTS.md
 
 1. Create `docs/reviews/context-guidance-audit-YYYY-MM-DD/` (or the repo’s standard reviews path with today’s date).
 2. Split the repo into **4–8 disjoint scopes**, including **≥1–2 lanes for recently changed code paths** and their guidance (see skill reference `references/example-scope-splits.md` for patterns).
-3. Launch **one subagent per scope in parallel**. Each subagent must:
+3. Launch **one subagent per scope in parallel** — each on **Composer 2.5** (`composer-2.5`), or the latest Composer generation available in Cursor if newer. Each subagent must:
    - **Not edit** any guidance files
    - Verify findings against the live codebase
    - Write its report to `NN-<scope-slug>.md` using the skill’s findings table template
@@ -40,7 +40,7 @@ If the user has not already approved fixes, **stop after Phase 1**, summarize fi
 
 ## Step 3 — Phase 2 (verify + remediate)
 
-1. Launch **one subagent per Phase 1 report**, same scope boundaries, in parallel where scopes do not overlap.
+1. Launch **one subagent per Phase 1 report**, same scope boundaries, in parallel where scopes do not overlap — each on **Composer 2.5** (`composer-2.5`), or the latest Composer generation available in Cursor if newer.
 2. Each subagent must:
    - Re-read its audit report
    - **Verify** each finding; skip false positives
@@ -58,6 +58,7 @@ If the user has not already approved fixes, **stop after Phase 1**, summarize fi
 ## Orchestration rules
 
 - Use **many focused subagents**, not one full-repo pass.
+- **Cursor subagent model:** **Composer 2.5** (`composer-2.5`) for every subagent unless the user names another model; if a newer Composer generation is available, use the latest Composer model instead.
 - Phase 1 = reports only. Phase 2 = fixes only.
 - Subagents that must write files need **write-capable** delegation; do not rely on read-only explorers unless the orchestrator saves their output.
 - Do not commit unless the user or automation explicitly requests it.

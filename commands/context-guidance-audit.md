@@ -23,7 +23,7 @@ Discover guidance artifacts before scoping (`Glob **/CLAUDE.md`, root agent inst
 
 1. Create `docs/reviews/context-guidance-audit-YYYY-MM-DD/`.
 2. Split into **4–8 disjoint scopes** (see skill `references/example-scope-splits.md`).
-3. Launch **one subagent per scope in parallel** — **no guidance edits**; verify findings; write `NN-<scope-slug>.md` using the skill’s report template.
+3. Launch **one subagent per scope in parallel** — each on **Composer 2.5** (`composer-2.5`), or the latest Composer generation in Cursor if newer — **no guidance edits**; verify findings; write `NN-<scope-slug>.md` using the skill’s report template.
 4. **Wait for all Phase 1 subagents to finish.**
 5. Optionally write `SYNTHESIS.md`. Do not remediate yet unless the user asked for audit-and-fix in one run.
 
@@ -33,7 +33,7 @@ If fixes were not pre-approved, stop after Phase 1, summarize, and ask to procee
 
 ## Step 3 — Phase 2 (verify + remediate)
 
-1. **One subagent per Phase 1 report**, parallel when scopes are disjoint.
+1. **One subagent per Phase 1 report**, parallel when scopes are disjoint — each on **Composer 2.5** (`composer-2.5`), or the latest Composer generation in Cursor if newer.
 2. Re-verify findings; fix verified issues in **guidance files only**; append `## Remediation log` to each report.
 3. **Wait for all Phase 2 subagents to finish.**
 4. Run repo doc/link verification if applicable.
@@ -42,4 +42,4 @@ If fixes were not pre-approved, stop after Phase 1, summarize, and ask to procee
 
 Summarize fixes and deferrals. **Delete** the audit folder after acceptance (or immediately if unattended cleanup is configured). Do not commit unless asked.
 
-**Orchestration:** Many narrow subagents; Phase 1 = reports only; Phase 2 = fixes only; write-capable subagents for file output.
+**Orchestration:** Many narrow subagents; **Composer 2.5** (`composer-2.5`) for every subagent unless the user specifies otherwise (or latest Composer if newer); Phase 1 = reports only; Phase 2 = fixes only; write-capable subagents for file output.

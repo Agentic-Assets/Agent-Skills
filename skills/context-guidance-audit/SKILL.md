@@ -19,6 +19,7 @@ Complements skills such as **context-engineering** (maturity and architecture) a
 4. **Verify against the live repo.** Every finding needs evidence: `Glob`/`Grep`/`Read`, manifest scripts (`package.json`, `Makefile`, etc.), routes, installed skill/agent paths.
 5. **Concise agent guidance.** Remove ambiguity and stale claims; do not bloat files with copied checklists from external skills.
 6. **Ephemeral audit folder.** Reports live in a dated review folder until remediation is accepted; then **delete the whole folder** (user typically approves before Phase 2 and again before cleanup).
+7. **Subagent model (Cursor).** Launch **every** Phase 1 and Phase 2 subagent on **Composer 2.5** (`composer-2.5`) unless the user names a different model. If the host offers a **newer Composer generation**, use that latest Composer model instead. Do not omit the model pin on Cursor Task/subagent calls unless the user explicitly asks you to.
 
 ## When to use
 
@@ -52,6 +53,7 @@ Use zero-padded numbers and stable slug names so Phase 2 maps 1:1 to reports.
 3. **Identify recently changed areas** (e.g. `git log --since=…`, recent merges, active branch diff, or user-stated focus). Map changed code paths to nearby guidance (`**/CLAUDE.md`, docs, skills) — at least **one or two Phase 1 scopes must include those areas**, even if you otherwise use a standard lane split.
 4. Choose **4–8 parallel audit scopes** — disjoint folders/domains, biased toward recent-change coverage where it matters. See [references/example-scope-splits.md](references/example-scope-splits.md) for sample lane patterns (including one real Next.js monolith example).
 5. Launch one subagent per scope with:
+   - **Model:** Composer 2.5 (`composer-2.5`), or the latest Composer generation available in Cursor if newer.
    - Explicit **read-only** instruction (`Do NOT fix anything`).
    - **Output path** for the report file (subagent **must write** the file — use a subagent type with write access; read-only explorers require the parent to persist output).
    - Report template (below).
@@ -98,7 +100,7 @@ Use zero-padded numbers and stable slug names so Phase 2 maps 1:1 to reports.
 
 ### Orchestrator
 
-1. Launch **one subagent per Phase 1 report**, same scope boundary.
+1. Launch **one subagent per Phase 1 report**, same scope boundary — each on **Composer 2.5** (`composer-2.5`) or the latest Composer generation available in Cursor if newer.
 2. Each subagent:
    - Reads its audit report.
    - **Re-verifies** each finding.
@@ -143,7 +145,7 @@ Adjust lane count (4–8). Merge or split based on repo size. **Do not let a tem
 
 ## Subagent dispatch pattern
 
-Use the repo’s preferred subagent model unless the user specifies otherwise.
+**Cursor:** pin **Composer 2.5** (`composer-2.5`) on **every** Phase 1 and Phase 2 subagent unless the user specifies otherwise; if a newer Composer model is available in the host, use the latest Composer generation instead. Non-Cursor hosts: omit explicit model pins unless the user requests them.
 
 **Phase 1 prompt skeleton:**
 
