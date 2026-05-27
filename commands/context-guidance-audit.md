@@ -8,7 +8,14 @@ Run a full **context guidance audit** on this repository.
 
 ## Step 0 — Invoke the skill
 
-**First:** Read and follow `skills/context-guidance-audit/SKILL.md` (or `~/.claude/skills/context-guidance-audit/SKILL.md` when installed from this collection). Treat it as the source of truth for phases, subagent rules, report format, and cleanup.
+**First:** Read and follow the skill at the path that matches where you are working:
+
+- **In this Agent-Skills repo:** `skills/context-guidance-audit/SKILL.md`
+- **In another codebase:** `.agents/skills/context-guidance-audit/SKILL.md` (or that repo’s equivalent path)
+
+Treat `SKILL.md` as the source of truth for phases, subagent rules, report format, and cleanup.
+
+**If the skill is not in the codebase you are auditing:** copy it in before continuing — do not improvise from memory. Canonical source: [Agent-Skills `skills/context-guidance-audit/`](https://github.com/Agentic-Assets/Agent-Skills/tree/main/skills/context-guidance-audit) on `main`. Copy the full folder (`SKILL.md`, `automation-prompt.md`, `references/example-scope-splits.md`) into `.agents/skills/context-guidance-audit/`. Prefer a local sibling `Agent-Skills` checkout when available; otherwise fetch from GitHub. Then read `SKILL.md` and proceed.
 
 Discover guidance artifacts before scoping (`Glob **/CLAUDE.md`, root agent instruction files, `.cursor/`, `.agents/`, docs index). Map **recent codebase changes** to guidance and ensure **≥1–2 Phase 1 scopes** cover those areas. Do not assume this repo matches any example layout in the skill references.
 
