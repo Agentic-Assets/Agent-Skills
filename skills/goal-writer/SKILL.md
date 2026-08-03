@@ -15,7 +15,7 @@ Save one Markdown file under `goals/` named:
 YYYY-MM-DD-<short-slug>-goal.md
 ```
 
-The saved goal body must be about 3000-3500 characters, excluding frontmatter if any. Do not use `GOAL.md`, `goal.md`, or undated names.
+The saved goal body should be between 3000 and 4000 characters, excluding frontmatter if any. Treat 4000 characters as a hard cap, but do not over-optimize exact length once the goal lands anywhere in that range. Do not use `GOAL.md`, `goal.md`, or undated names.
 
 ## Required Shape
 
