@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,25,27&height=200&section=header&text=Agent%20Skills&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=17%20Skills%20%E2%80%A2%209%20Workflows%20%E2%80%A2%20Personal%20Skill%20Collection&descSize=20&descAlignY=55" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,25,27&height=200&section=header&text=Agent%20Skills&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=24%20Skills%20%E2%80%A2%209%20Workflows%20%E2%80%A2%20Personal%20Skill%20Collection&descSize=20&descAlignY=55" width="100%"/>
 </p>
 
 <p align="center">
-  <a href="https://github.com/cas3526/Agent-Skills"><img src="https://img.shields.io/badge/version-0.4.2-blue.svg?style=for-the-badge" alt="Version"/></a>
+  <a href="https://github.com/cas3526/Agent-Skills"><img src="https://img.shields.io/badge/version-0.4.3-blue.svg?style=for-the-badge" alt="Version"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge" alt="License"/></a>
   <a href="https://github.com/cas3526/Agent-Skills"><img src="https://img.shields.io/badge/Claude_Code-Skills-purple.svg?style=for-the-badge" alt="Claude Code"/></a>
 </p>
@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <strong>🎯 <!-- SKILL_COUNT -->23<!-- /SKILL_COUNT --> Skills</strong> • <strong>🚀 <!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows</strong> • <strong>🧠 Context Engineering</strong> • <strong>📖 Progressive Disclosure</strong>
+  <strong>🎯 <!-- SKILL_COUNT -->24<!-- /SKILL_COUNT --> Skills</strong> • <strong>🚀 <!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows</strong> • <strong>🧠 Context Engineering</strong> • <strong>📖 Progressive Disclosure</strong>
 </p>
 
 ---
@@ -24,9 +24,11 @@ This is a personal collection of specialized Claude Code skills organized around
 
 - **📚 PhD Academic Business Research**: Econometric analysis (PyFixest, STATA), data manipulation, publication-ready output
 - **💰 Financial Analysis & Services**: WRDS data extraction, financial data analysis, portfolio analytics
-- **🏢 Real Estate (Residential/Commercial)**: Investment analysis, DCF/IRR modeling, institutional underwriting
+- **🏢 Real Estate (Residential/Commercial)**: Investment analysis, DCF/IRR modeling, institutional underwriting, verified Excel workbooks and model audits
 - **🤖 AI/ML/AI Agents**: ML pipelines, prompt engineering, AI tool integration via MCP
 - **💻 Development & Technical Writing**: FastAPI APIs, code quality, documentation, automation
+- **🧠 Context Engineering**: Agent context architecture, guidance audits and remediation
+- **🛠️ Authoring & Productivity**: Skill creation and benchmarking, Codex goals, social content
 
 ---
 
@@ -73,7 +75,7 @@ Skills activate automatically based on your requests:
 
 ## Skills Overview
 
-**<!-- SKILL_COUNT -->23<!-- /SKILL_COUNT --> specialized skills** organized by domain:
+**<!-- SKILL_COUNT -->24<!-- /SKILL_COUNT --> specialized skills** organized by domain:
 
 ### 📚 PhD Academic Business Research (4 skills)
 - **academic-writing**: LaTeX manuscript drafting and revision for finance, economics, and real estate research
@@ -86,8 +88,11 @@ Skills activate automatically based on your requests:
 - **pandas-pro**: Financial data analysis, portfolio analytics, return calculations, risk metrics
 - **pyfixest-latex**: Financial econometric analysis and publication-ready output
 
-### 🏢 Real Estate (Residential/Commercial) (1 skill)
-- **cre-investment-analysis**: Commercial real estate investment analysis, DCF/IRR modeling, business plans, institutional underwriting
+### 🏢 Real Estate (Residential/Commercial) (4 skills)
+- **cre-investment-analysis**: Commercial real estate investment analysis, investment memos, business plans, institutional underwriting
+- **cre-dcf-valuation**: CRE DCF methodology — NOI cash flows, levered/unlevered IRR, equity multiple, DSCR, exit cap reversion
+- **cre-excel-dcf-modeler**: Hand-built Excel/ExcelJS DCF workbooks using the 7-tab CRE model structure
+- **cre-excel-underwriting**: Script-built underwriting workbooks with independent formula verification, plus structural audit of any CRE model
 
 ### 🤖 AI/ML/AI Agents (3 skills)
 - **ml-pipeline**: ML pipelines with MLflow/Kubeflow, experiment tracking, feature stores, model lifecycle
@@ -108,6 +113,11 @@ Skills activate automatically based on your requests:
 ### 🧠 Context Engineering (2 skills)
 - **context-engineering**: Audit, optimize, and architect the AI agent context layer (CLAUDE.md, hooks, commands, skills)
 - **context-guidance-audit**: Two-phase subagent-driven deep audit and remediation of agent guidance docs (read-only findings, then verified fixes)
+
+### 🛠️ Authoring & Productivity (3 skills)
+- **skill-creator**: Create, modify, and benchmark skills; optimize descriptions for triggering accuracy
+- **goal-writer**: Write Codex Goal files (`GOAL.md`) as scoped completion contracts
+- **social-media-content**: Draft and adapt posts for X, LinkedIn, and Instagram; content calendars, threads, captions
 
 See **[SKILLS_GUIDE.md](SKILLS_GUIDE.md)** for when to use each skill, workflows, and examples.
 
@@ -174,8 +184,8 @@ skills/fastapi-expert/
 4. 50% faster initial responses, surgical precision when needed
 
 **Stats:**
-- <!-- SKILL_COUNT -->23<!-- /SKILL_COUNT --> skills
-- <!-- REFERENCE_COUNT -->99<!-- /REFERENCE_COUNT --> reference files
+- <!-- SKILL_COUNT -->24<!-- /SKILL_COUNT --> skills
+- <!-- REFERENCE_COUNT -->106<!-- /REFERENCE_COUNT --> reference files
 - ~50% token reduction through progressive disclosure
 
 ---
@@ -199,6 +209,12 @@ wrds-data-pull → pandas-pro → code-documenter → code-reviewer
 **Real Estate Investment Analysis:**
 ```
 pandas-pro → cre-investment-analysis → code-documenter
+```
+
+**CRE Deal Underwriting (build → prove → review):**
+```
+pdf (extract OM/T-12) → cre-excel-underwriting (build + verify + audit) →
+cre-investment-analysis (investment memo)
 ```
 
 **ML/AI Pipeline:**
@@ -233,9 +249,10 @@ wrds-data-pull → stata-accounting-research → code-documenter
 - **Integration**: SQL queries, CUSIP/GVKEY/PERMNO linking
 
 ### Real Estate
-- **Analysis**: DCF modeling, IRR analysis, NOI calculations, cap rate analysis
-- **Property Types**: Multifamily, office, retail, industrial, mixed-use
-- **Output**: Investment memos, underwriting models, feasibility studies
+- **Analysis**: DCF modeling, IRR analysis, NOI calculations, cap rate analysis, rent roll and unit-mix projection, debt sizing and covenants (DSCR, debt yield), LP/GP waterfalls
+- **Property Types**: Multifamily, office, retail, industrial, hospitality, self-storage, mixed-use
+- **Output**: Investment memos, underwriting workbooks (.xlsx), model audit reports, feasibility studies
+- **Verification**: Generated workbooks are recalculated with LibreOffice and compared against an independent Python engine before they are trusted
 
 ### AI/ML
 - **Pipelines**: MLflow, Kubeflow, experiment tracking, feature stores
@@ -258,15 +275,19 @@ Agent-Skills/
 ├── .claude-plugin/
 │   ├── plugin.json           # Plugin metadata
 │   └── marketplace.json      # Marketplace configuration
-├── skills/                   # 17 specialized skills
-│   ├── academic-writing/
+├── skills/                   # 24 specialized skills
+│   ├── academic-writing/     # each also packaged as <skill-name>.skill
 │   ├── code-documenter/
 │   ├── code-reviewer/
 │   ├── context-engineering/
 │   ├── context-guidance-audit/
+│   ├── cre-dcf-valuation/
+│   ├── cre-excel-dcf-modeler/
+│   ├── cre-excel-underwriting/
 │   ├── cre-investment-analysis/
 │   ├── debugging-wizard/
 │   ├── fastapi-expert/
+│   ├── goal-writer/
 │   ├── matplotlib/
 │   ├── mcp-developer/
 │   ├── ml-pipeline/
@@ -275,6 +296,8 @@ Agent-Skills/
 │   ├── prompt-engineer/
 │   ├── pyfixest-latex/
 │   ├── scientific-visualization/
+│   ├── skill-creator/
+│   ├── social-media-content/
 │   ├── stata-accounting-research/
 │   └── wrds-data-pull/
 ├── commands/                 # 9 workflow commands
@@ -363,13 +386,20 @@ This is a personal skill collection, but contributions are welcome!
 
 3. Create reference files (100-600 lines each)
 
-4. Update version.json and run:
+4. Package the skill. Every skill ships in **both** formats: the folder
+   `skills/my-skill/` and the zipped `skills/my-skill.skill` beside it. Re-zip
+   whenever the folder changes so the two never drift:
+   ```bash
+   cd skills && rm -f my-skill.skill && zip -r -X -q my-skill.skill my-skill -x '*.DS_Store'
+   ```
+
+5. Update version.json and run:
    ```bash
    python scripts/update-docs.py
    python scripts/validate-skills.py
    ```
 
-5. Test locally and commit
+6. Test locally and commit
 
 See **[CLAUDE.md](CLAUDE.md)** for detailed authorship standards.
 
@@ -431,4 +461,4 @@ Originally forked from [jeffallan/claude-skills](https://github.com/jeffallan/cl
 
 ---
 
-**Built for Claude Code** | **<!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows** | **<!-- REFERENCE_COUNT -->99<!-- /REFERENCE_COUNT --> Reference Files** | **<!-- SKILL_COUNT -->23<!-- /SKILL_COUNT --> Skills**
+**Built for Claude Code** | **<!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows** | **<!-- REFERENCE_COUNT -->106<!-- /REFERENCE_COUNT --> Reference Files** | **<!-- SKILL_COUNT -->24<!-- /SKILL_COUNT --> Skills**

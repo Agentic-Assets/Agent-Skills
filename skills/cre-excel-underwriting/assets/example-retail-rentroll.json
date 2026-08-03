@@ -1,0 +1,131 @@
+{
+  "deal": {
+    "name": "Brookside Shops",
+    "property_type": "retail",
+    "address": "3600 S Peoria Ave, Tulsa, OK",
+    "analysis_date": "2026-08-03"
+  },
+  "property": {
+    "rentable_sf": 68500,
+    "year_built": 2009
+  },
+  "acquisition": {
+    "purchase_price": 16800000,
+    "acquisition_cost_pct": 0.015,
+    "upfront_capex": 250000
+  },
+  "revenue": {
+    "mode": "rent_roll",
+    "tenants": [
+      {
+        "name": "Grocery anchor (NNN)",
+        "sf": 32000,
+        "rent_psf": 14.5,
+        "lease_end_year": 2034,
+        "escalation": 0.015
+      },
+      {
+        "name": "National pharmacy",
+        "sf": 12500,
+        "rent_psf": 22.0,
+        "lease_end_year": 2031,
+        "escalation": 0.02
+      },
+      {
+        "name": "Regional fitness",
+        "sf": 9800,
+        "rent_psf": 18.75,
+        "lease_end_year": 2029,
+        "escalation": 0.03
+      },
+      {
+        "name": "Inline shops (7 suites)",
+        "sf": 11200,
+        "rent_psf": 28.5,
+        "lease_end_year": 2028,
+        "escalation": 0.03
+      },
+      {
+        "name": "Pad \u2014 quick service",
+        "sf": 3000,
+        "rent_psf": 42.0,
+        "lease_end_year": 2036,
+        "escalation": 0.02
+      }
+    ],
+    "market_rent_psf": 21.5,
+    "rent_growth": 0.025,
+    "vacancy_credit_loss": 0.06,
+    "other_income_annual": 84000,
+    "other_income_growth": 0.02,
+    "recovery_structure": "nnn",
+    "recovery_ratio": 0.92
+  },
+  "expenses": {
+    "mode": "line_items",
+    "line_items": [
+      {
+        "name": "Real estate taxes",
+        "amount_annual": 268000,
+        "recoverable": true,
+        "growth": 0.035
+      },
+      {
+        "name": "Insurance",
+        "amount_annual": 54000,
+        "recoverable": true,
+        "growth": 0.055
+      },
+      {
+        "name": "Common area maintenance",
+        "amount_annual": 132000,
+        "recoverable": true,
+        "growth": 0.03
+      },
+      {
+        "name": "Landscaping & snow",
+        "amount_annual": 38000,
+        "recoverable": true,
+        "growth": 0.03
+      },
+      {
+        "name": "General & administrative",
+        "amount_annual": 42000,
+        "recoverable": false,
+        "growth": 0.025
+      }
+    ],
+    "management_fee_pct": 0.04,
+    "expense_growth": 0.03,
+    "capex_reserve_psf": 0.2,
+    "rollover_pct_annual": 0.1,
+    "renewal_probability": 0.7,
+    "ti_new_psf": 35,
+    "ti_renewal_psf": 10,
+    "lc_new_pct": 0.05,
+    "lc_renewal_pct": 0.025,
+    "new_lease_term_years": 5
+  },
+  "debt": {
+    "enabled": true,
+    "sizing_method": "dscr",
+    "interest_rate": 0.0685,
+    "io_years": 0,
+    "amort_years": 25,
+    "dscr_min": 1.35,
+    "debt_yield_min": 0.095
+  },
+  "exit": {
+    "hold_years": 6,
+    "exit_cap_rate": 0.0745,
+    "disposition_cost_pct": 0.02
+  },
+  "returns": {
+    "discount_rate": 0.09
+  },
+  "sources": {
+    "Asmp_Price": "Seller guidance, 7/2026",
+    "Asmp_ExitCap": "Going-in +40 bps; grocery-anchored, 2009 vintage",
+    "Asmp_Rate": "Life co indicative quote, 7/2026"
+  }
+}

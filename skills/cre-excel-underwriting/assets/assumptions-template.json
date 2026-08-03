@@ -1,0 +1,136 @@
+{
+  "_README": [
+    "Copy this file, fill it in, delete the _help keys (or leave them — they are ignored).",
+    "",
+    "TWO RULES THAT CAUSE THE MOST EXPENSIVE ERRORS:",
+    "  1. Every rate is a DECIMAL FRACTION. 6.5% is 0.065, never 6.5.",
+    "     The builder refuses to run on a rate above 1.0 rather than being wrong by 100x.",
+    "  2. Expense recoveries require expenses.mode = 'line_items'.",
+    "     An OpEx ratio is a % of EGI and recoveries feed EGI, so combining them is circular.",
+    "",
+    "Then:  python3 build_model.py  this.json  model.xlsx",
+    "       python3 verify_model.py this.json  model.xlsx",
+    "       python3 audit_model.py            model.xlsx"
+  ],
+
+  "deal": {
+    "name": "Property Name",
+    "property_type": "office",
+    "_help_property_type": "office | industrial | retail | multifamily | hospitality | self_storage | other",
+    "address": "",
+    "analysis_date": "2026-08-03"
+  },
+
+  "property": {
+    "rentable_sf": 100000,
+    "_help_rentable_sf": "Required for everything except multifamily.",
+    "units": null,
+    "_help_units": "Required for multifamily. Leave null otherwise.",
+    "year_built": 2005,
+    "occupancy_current": 0.92
+  },
+
+  "acquisition": {
+    "purchase_price": 25000000,
+    "acquisition_cost_pct": 0.018,
+    "_help_acquisition_cost_pct": "Title, transfer tax, legal, diligence. Typically 0.01-0.02. Jurisdiction-specific — look it up.",
+    "upfront_capex": 0,
+    "_help_upfront_capex": "Day-one capital from the business plan. Included in basis and in equity."
+  },
+
+  "revenue": {
+    "mode": "simple",
+    "_help_mode": "simple = SF x market rent | unit_mix = multifamily/storage | rent_roll = lease-by-lease",
+
+    "market_rent_psf": 24.5,
+    "_help_market_rent_psf": "$/SF/year. NET EFFECTIVE, not face rent — adjust for free rent and concessions.",
+
+    "market_rent_month": null,
+    "_help_market_rent_month": "$/unit/month. Multifamily only. Memo when unit_types is supplied.",
+
+    "unit_types": null,
+    "_help_unit_types": "unit_mix mode: [{name, count, sf, rent_month}, ...]",
+
+    "tenants": null,
+    "_help_tenants": "rent_roll mode: [{name, sf, rent_psf, lease_end_year, escalation}, ...]. Each lease grows at its OWN escalation.",
+
+    "rent_growth": 0.03,
+    "vacancy_credit_loss": 0.08,
+    "_help_vacancy_credit_loss": "Structural vacancy + credit loss, applied to Potential Gross Income.",
+
+    "other_income_annual": 0,
+    "other_income_growth": 0.03,
+
+    "recovery_structure": "gross",
+    "_help_recovery_structure": "gross | modified_gross | nn | nnn. Anything other than 'gross' requires expenses.mode = 'line_items'.",
+    "recovery_ratio": 0.0,
+    "_help_recovery_ratio": "Share of the recoverable pool actually reimbursed. 0 for gross leases; 0.85-0.95 typical for NNN."
+  },
+
+  "expenses": {
+    "mode": "ratio",
+    "_help_mode": "ratio = % of Year-1 EGI, inflated (gross-lease / multifamily) | line_items = itemised (NNN / modified gross)",
+
+    "opex_ratio": 0.38,
+    "_help_opex_ratio": "ratio mode only. Anchored to YEAR-1 EGI then inflated at expense_growth.",
+
+    "line_items": null,
+    "_help_line_items": "line_items mode: [{name, amount_annual, recoverable, growth}, ...]. 'recoverable' items feed the recovery pool.",
+
+    "management_fee_pct": 0.03,
+    "_help_management_fee_pct": "% of EGI. Use YOUR management agreement, not the seller's affiliate rate.",
+    "expense_growth": 0.03,
+
+    "capex_reserve_psf": 0.35,
+    "_help_capex_reserve_psf": "$/SF/yr. Non-multifamily.",
+    "capex_reserve_per_unit": null,
+    "_help_capex_reserve_per_unit": "$/unit/yr. Multifamily only.",
+
+    "turnover_rate": null,
+    "turn_cost_per_unit": null,
+    "_help_turn": "Multifamily only — replaces TI/LC.",
+
+    "rollover_pct_annual": 0.15,
+    "_help_rollover_pct_annual": "Share of SF rolling each year. Use the real expiry schedule when rollover drives the deal.",
+    "renewal_probability": 0.65,
+    "ti_new_psf": 45,
+    "ti_renewal_psf": 15,
+    "lc_new_pct": 0.05,
+    "lc_renewal_pct": 0.025,
+    "new_lease_term_years": 5
+  },
+
+  "debt": {
+    "enabled": true,
+    "sizing_method": "ltv",
+    "_help_sizing_method": "ltv | amount | dscr. Lenders size to the TIGHTEST of LTV, debt yield, and DSCR — compute all three.",
+    "ltv": 0.6,
+    "loan_amount": null,
+    "interest_rate": 0.065,
+    "io_years": 2,
+    "amort_years": 30,
+    "dscr_min": 1.25,
+    "debt_yield_min": 0.09,
+    "_help_covenants": "DSCR is tested in the FIRST AMORTIZING YEAR. Debt yield uses the ORIGINAL loan amount."
+  },
+
+  "exit": {
+    "hold_years": 5,
+    "exit_cap_rate": 0.0675,
+    "_help_exit_cap_rate": "Convention is going-in cap + 25-50 bps. Tighter than going-in is a bet on compression — state the thesis.",
+    "disposition_cost_pct": 0.02
+  },
+
+  "returns": {
+    "discount_rate": 0.085,
+    "_help_discount_rate": "Unlevered required return. Must exceed long-run cash-flow growth."
+  },
+
+  "sources": {
+    "_help": "Keyed by the Asmp_* name shown on the Assumptions tab. Anything missing is highlighted amber as UNSOURCED. Write it so a reviewer can reproduce the number without asking you.",
+    "Asmp_Price": "",
+    "Asmp_RentPSF": "",
+    "Asmp_ExitCap": "",
+    "Asmp_Rate": ""
+  }
+}

@@ -2,10 +2,10 @@
 
 ## Current Status
 
-**Version:** v<!-- VERSION -->0.4.2<!-- /VERSION -->
+**Version:** v<!-- VERSION -->0.4.3<!-- /VERSION -->
 
-- **<!-- SKILL_COUNT -->23<!-- /SKILL_COUNT --> Skills** across 5 domains
-- **<!-- REFERENCE_COUNT -->99<!-- /REFERENCE_COUNT --> Reference Files** with progressive disclosure architecture
+- **<!-- SKILL_COUNT -->24<!-- /SKILL_COUNT --> Skills** across 5 domains
+- **<!-- REFERENCE_COUNT -->106<!-- /REFERENCE_COUNT --> Reference Files** with progressive disclosure architecture
 - **<!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Project Workflow Commands**
 - **50% Token Reduction** through selective disclosure architecture
 
@@ -25,8 +25,11 @@ This is a personal skill collection customized for Python development, data anal
 - **wrds-data-pull** - WRDS data extraction (Compustat, CRSP, IBES, etc.)
 - **pandas-pro** - Financial data analysis, portfolio analytics
 
-### 🏢 Real Estate (Residential/Commercial) (1 skill)
-- **cre-investment-analysis** - Commercial real estate investment analysis and underwriting
+### 🏢 Real Estate (Residential/Commercial) (4 skills)
+- **cre-investment-analysis** - Commercial real estate investment analysis, memos, business plans
+- **cre-dcf-valuation** - CRE DCF methodology (NOI cash flows, IRR, equity multiple, DSCR, exit cap)
+- **cre-excel-dcf-modeler** - Hand-built Excel/ExcelJS DCF workbooks, 7-tab CRE structure
+- **cre-excel-underwriting** - Script-built and independently verified underwriting workbooks, plus audit of any CRE model
 
 ### 🤖 AI/ML/AI Agents (3 skills)
 - **ml-pipeline** - ML pipelines with MLflow/Kubeflow, experiment tracking
@@ -44,8 +47,14 @@ This is a personal skill collection customized for Python development, data anal
 - **matplotlib** - Low-level plotting with full customization
 - **scientific-visualization** - Publication-ready multi-panel figures with journal formatting
 
-### 🧠 Context Engineering (1 skill)
+### 🧠 Context Engineering (2 skills)
 - **context-engineering** - Audit, optimize, and architect the AI agent context layer
+- **context-guidance-audit** - Two-phase subagent audit and remediation of agent guidance docs
+
+### 🛠️ Authoring & Productivity (3 skills)
+- **skill-creator** - Create, modify, and benchmark skills
+- **goal-writer** - Codex Goal files as scoped completion contracts
+- **social-media-content** - Posts, threads, and content calendars for X, LinkedIn, Instagram
 
 ---
 

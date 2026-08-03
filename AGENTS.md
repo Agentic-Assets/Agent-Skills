@@ -94,7 +94,8 @@ Reference files follow the [Agent Skills specification](https://agentskills.io/s
 3. Create reference files for deep content (100+ lines)
 4. Add routing table linking topics to references
 5. Test skill triggers with realistic prompts
-6. Update SKILLS_GUIDE.md if adding new domain
+6. Package the skill (see Skill Packaging below)
+7. Update SKILLS_GUIDE.md, README.md, and QUICKSTART.md skill lists
 
 ### When Modifying Skills
 
@@ -103,6 +104,27 @@ Reference files follow the [Agent Skills specification](https://agentskills.io/s
 3. Preserve progressive disclosure structure
 4. Update related cross-references
 5. Verify routing table accuracy
+6. Re-package the `.skill` archive so it matches the folder
+
+---
+
+### Skill Packaging
+
+Every skill ships in **two formats** that must stay identical:
+
+- `skills/<name>/` — the source of truth, edited directly
+- `skills/<name>.skill` — a zip of that folder, for distribution and install
+
+Re-zip after any change to the folder, including reference files, scripts, and
+assets. A `.skill` that lags its folder installs stale content with no visible
+error.
+
+```bash
+cd skills && rm -f <name>.skill && zip -r -X -q <name>.skill <name> -x '*.DS_Store'
+```
+
+The archive must contain the skill folder at its root (`<name>/SKILL.md`), not
+the bare files.
 
 ---
 

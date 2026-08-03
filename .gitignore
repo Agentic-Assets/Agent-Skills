@@ -38,3 +38,7 @@ submits/
 # skill-creator eval workspaces (transient)
 *-workspace/
 skills/*-workspace/
+
+# Python
+__pycache__/
+*.py[cod]
