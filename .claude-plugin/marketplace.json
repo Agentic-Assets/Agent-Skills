@@ -5,14 +5,14 @@
   },
   "metadata": {
     "description": "Personal skill collection for PhD research, finance, real estate, AI/ML, and Python development",
-    "version": "0.4.2"
+    "version": "0.4.3"
   },
   "plugins": [
     {
       "name": "agent-skills",
       "source": "./",
-      "description": "23 specialized skills across 6 domains: PhD academic research, financial analysis, real estate, AI/ML, development, and data visualization. Includes 9 project workflow commands for epic planning, discovery, execution, and retrospectives.",
-      "version": "0.4.2",
+      "description": "24 specialized skills across 6 domains: PhD academic research, financial analysis, real estate, AI/ML, development, and data visualization. Includes 9 project workflow commands for epic planning, discovery, execution, and retrospectives.",
+      "version": "0.4.3",
       "author": {
         "name": "cas3526",
         "email": "github@cas3526"

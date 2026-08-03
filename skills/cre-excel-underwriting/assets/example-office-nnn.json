@@ -1,0 +1,103 @@
+{
+  "deal": {
+    "name": "Northgate Office Center",
+    "property_type": "office",
+    "address": "1200 Northgate Blvd, Tulsa, OK",
+    "analysis_date": "2026-08-03"
+  },
+  "property": {
+    "rentable_sf": 145000,
+    "year_built": 2004,
+    "occupancy_current": 0.91
+  },
+  "acquisition": {
+    "purchase_price": 41500000,
+    "acquisition_cost_pct": 0.018,
+    "upfront_capex": 750000
+  },
+  "revenue": {
+    "mode": "simple",
+    "market_rent_psf": 24.5,
+    "rent_growth": 0.028,
+    "vacancy_credit_loss": 0.09,
+    "other_income_annual": 185000,
+    "other_income_growth": 0.025,
+    "recovery_structure": "nnn",
+    "recovery_ratio": 0.88
+  },
+  "expenses": {
+    "mode": "line_items",
+    "line_items": [
+      {
+        "name": "Real estate taxes",
+        "amount_annual": 512000,
+        "recoverable": true,
+        "growth": 0.035
+      },
+      {
+        "name": "Insurance",
+        "amount_annual": 96000,
+        "recoverable": true,
+        "growth": 0.05
+      },
+      {
+        "name": "Utilities (CAM)",
+        "amount_annual": 168000,
+        "recoverable": true,
+        "growth": 0.03
+      },
+      {
+        "name": "Repairs & maintenance",
+        "amount_annual": 145000,
+        "recoverable": true,
+        "growth": 0.03
+      },
+      {
+        "name": "Janitorial",
+        "amount_annual": 121000,
+        "recoverable": true,
+        "growth": 0.03
+      },
+      {
+        "name": "General & administrative",
+        "amount_annual": 78000,
+        "recoverable": false,
+        "growth": 0.025
+      }
+    ],
+    "management_fee_pct": 0.03,
+    "expense_growth": 0.03,
+    "capex_reserve_psf": 0.35,
+    "rollover_pct_annual": 0.15,
+    "renewal_probability": 0.65,
+    "ti_new_psf": 55,
+    "ti_renewal_psf": 18,
+    "lc_new_pct": 0.05,
+    "lc_renewal_pct": 0.025,
+    "new_lease_term_years": 5
+  },
+  "debt": {
+    "enabled": true,
+    "sizing_method": "ltv",
+    "ltv": 0.6,
+    "interest_rate": 0.0645,
+    "io_years": 2,
+    "amort_years": 30,
+    "dscr_min": 1.25,
+    "debt_yield_min": 0.09
+  },
+  "exit": {
+    "hold_years": 5,
+    "exit_cap_rate": 0.075,
+    "disposition_cost_pct": 0.02
+  },
+  "returns": {
+    "discount_rate": 0.085
+  },
+  "sources": {
+    "Asmp_Price": "LOI dated 7/14/2026",
+    "Asmp_RentPSF": "CoStar submarket comps, 7/2026 \u2014 6 comps, $23.10\u2013$26.40/SF NNN",
+    "Asmp_ExitCap": "Going-in +50 bps for 2004 vintage at exit",
+    "Asmp_Rate": "Lender term sheet, Regions Bank, 7/22/2026"
+  }
+}

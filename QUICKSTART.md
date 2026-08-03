@@ -75,14 +75,15 @@ Try these commands to verify skills are working:
 ## First Steps
 
 ### 1. Understand What You Have
-**<!-- SKILL_COUNT -->23<!-- /SKILL_COUNT --> skills** covering:
+**<!-- SKILL_COUNT -->24<!-- /SKILL_COUNT --> skills** covering:
 - **PhD Academic Research (4)**: academic-writing, pyfixest-latex, stata-accounting-research, pandas-pro
 - **Financial Analysis (3)**: wrds-data-pull, pandas-pro, pyfixest-latex
-- **Real Estate (1)**: cre-investment-analysis
+- **Real Estate (4)**: cre-investment-analysis, cre-dcf-valuation, cre-excel-dcf-modeler, cre-excel-underwriting
 - **AI/ML (3)**: ml-pipeline, prompt-engineer, mcp-developer
 - **Development & Code Quality (5)**: fastapi-expert, code-documenter, code-reviewer, debugging-wizard, n8n-skills
 - **Data Visualization (2)**: matplotlib, scientific-visualization
-- **Context Engineering (1)**: context-engineering
+- **Context Engineering (2)**: context-engineering, context-guidance-audit
+- **Authoring & Productivity (3)**: skill-creator, goal-writer, social-media-content
 
 ### 2. Common Use Cases
 
@@ -114,6 +115,13 @@ Claude: [Activates pyfixest-latex]
 ```
 You: "Analyze this multifamily acquisition opportunity"
 Claude: [Activates cre-investment-analysis]
+```
+
+**CRE Underwriting**
+```
+You: "Underwrite this office deal from the OM and T-12"
+You: "Can you check this pro forma someone sent me?"
+Claude: [Activates cre-excel-underwriting]
 ```
 
 **AI Integration**
@@ -154,6 +162,8 @@ Claude: [Activates n8n-skills]
 | "Review this code for security" | code-reviewer |
 | "Generate LaTeX tables from PyFixest" | pyfixest-latex |
 | "Analyze this office building investment" | cre-investment-analysis |
+| "Underwrite this deal and show me the returns" | cre-excel-underwriting |
+| "Audit this rent roll and pro forma" | cre-excel-underwriting |
 | "Show me STATA code for PSM" | stata-accounting-research |
 | "Design prompts for this LLM task" | prompt-engineer |
 | "Create an MCP server" | mcp-developer |
@@ -259,7 +269,10 @@ FINANCIAL ANALYSIS
 └─ Analysis: pandas-pro + pyfixest-latex
 
 REAL ESTATE
-└─ CRE Analysis: cre-investment-analysis
+├─ Investment Case: cre-investment-analysis
+├─ Valuation Math: cre-dcf-valuation
+├─ Hand-Built Excel: cre-excel-dcf-modeler
+└─ Underwrite + Audit: cre-excel-underwriting
 
 AI/ML
 ├─ Pipelines: ml-pipeline
@@ -278,13 +291,20 @@ DATA VISUALIZATION
 └─ Journal Figures: scientific-visualization
 
 CONTEXT ENGINEERING
-└─ Agent Context: context-engineering
+├─ Agent Context: context-engineering
+└─ Guidance Audit: context-guidance-audit
+
+AUTHORING & PRODUCTIVITY
+├─ Skills: skill-creator
+├─ Codex Goals: goal-writer
+└─ Social Posts: social-media-content
 
 COMMON WORKFLOWS
 ├─ Research Paper: wrds-data-pull → pandas-pro → pyfixest-latex → academic-writing
 ├─ API Development: fastapi-expert → debugging-wizard → code-documenter → code-reviewer
 ├─ ML Pipeline: pandas-pro → ml-pipeline → prompt-engineer → code-documenter
 ├─ Business Analysis: pandas-pro → cre-investment-analysis → code-documenter
+├─ CRE Underwriting: pdf → cre-excel-underwriting → cre-investment-analysis
 └─ Automation: n8n-skills → mcp-developer → debugging-wizard
 ```
 

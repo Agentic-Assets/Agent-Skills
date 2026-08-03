@@ -14,8 +14,11 @@ This personal skill collection supports work across five domains:
 - **pandas-pro**: Financial data analysis, portfolio analytics, time series
 - **wrds-data-pull**: WRDS data extraction (Compustat, CRSP, IBES, Thomson Reuters)
 
-### 🏢 Real Estate (Residential/Commercial) (1 skill)
-- **cre-investment-analysis**: Commercial real estate investment analysis, DCF/IRR modeling, business plans, institutional underwriting
+### 🏢 Real Estate (Residential/Commercial) (4 skills)
+- **cre-investment-analysis**: Commercial real estate investment analysis, investment memos, business plans, institutional underwriting
+- **cre-dcf-valuation**: CRE DCF methodology — NOI cash flows, levered/unlevered IRR, equity multiple, DSCR, exit cap reversion
+- **cre-excel-dcf-modeler**: Hand-built Excel/ExcelJS DCF workbooks using the 7-tab CRE model structure
+- **cre-excel-underwriting**: Script-built underwriting workbooks with independent formula verification, plus structural audit of any CRE model
 
 ### 🤖 AI/ML/AI Agents (3 skills)
 - **ml-pipeline**: ML pipelines with MLflow/Kubeflow, experiment tracking, feature stores
@@ -36,6 +39,11 @@ This personal skill collection supports work across five domains:
 ### 🧠 Context Engineering (2 skills)
 - **context-engineering**: Audit, optimize, and architect the AI agent context layer (CLAUDE.md, hooks, commands, skills)
 - **context-guidance-audit**: Two-phase subagent audit and remediation of agent guidance (CLAUDE.md, docs, skills references)
+
+### 🛠️ Authoring & Productivity (3 skills)
+- **skill-creator**: Create, modify, and benchmark skills; optimize descriptions for triggering accuracy
+- **goal-writer**: Write Codex Goal files (`GOAL.md`) as scoped completion contracts
+- **social-media-content**: Draft and adapt posts for X, LinkedIn, and Instagram; content calendars, threads, captions
 
 ---
 
@@ -77,10 +85,35 @@ This personal skill collection supports work across five domains:
 
 ### Real Estate
 
+Four CRE skills overlap by design. Pick by **what you need produced**:
+
+| You need | Skill |
+|---|---|
+| A written investment case — memo, business plan, recommendation | cre-investment-analysis |
+| The valuation math and methodology, no workbook required | cre-dcf-valuation |
+| To hand-build an Excel workbook, formula by formula | cre-excel-dcf-modeler |
+| A generated workbook you can prove is right, or a review of someone else's | cre-excel-underwriting |
+
 **cre-investment-analysis**
 - Use when: Analyzing commercial properties, creating investment memos, DCF/IRR analysis
 - Triggers: commercial real estate, CRE, multifamily, DCF, IRR, NOI, cap rate
 - Output: Investment analysis reports, financial models
+
+**cre-dcf-valuation**
+- Use when: Working through CRE DCF methodology — NOI-based cash flows, exit cap reversion, levered vs unlevered IRR, equity multiple, DSCR
+- Triggers: CRE valuation, property DCF, NOI projection, cap rate analysis, hold-period analysis
+- Output: Valuation methodology, cash flow schedules, return calculations
+
+**cre-excel-dcf-modeler**
+- Use when: Building a CRE DCF workbook by hand in Excel or ExcelJS using the 7-tab structure (Cover, Assumptions, Rent Roll, Operating Statement, Debt Schedule, Returns, Sensitivity)
+- Triggers: CRE excel model, property DCF excel, rent roll model, acquisition model, CRE waterfall
+- Output: Excel workbook with authored formulas
+
+**cre-excel-underwriting**
+- Use when: Underwriting a deal end to end, or reviewing a pro forma somebody else built — from an OM, broker package, rent roll, or T-12
+- Triggers: underwrite a property, pro forma, T-12, offering memorandum, DSCR, debt yield, equity multiple, audit this model, check this spreadsheet
+- Output: Generated .xlsx workbook, verification result, structural audit report
+- Note: Builds via `scripts/build_model.py`, then proves the workbook by recalculating it in LibreOffice and comparing every material cell against an independent Python engine (`verify_model.py`). `audit_model.py` runs standalone against **any** workbook — use it to review third-party models. Requires `openpyxl`; verification additionally requires LibreOffice with Calc.
 
 ### AI/ML/AI Agents
 
@@ -150,6 +183,23 @@ This personal skill collection supports work across five domains:
 - Triggers: context guidance audit, agent guidance audit, CLAUDE.md drift, stale agent docs, guidance deep dive, context-guidance-audit
 - Output: Dated audit reports (Phase 1), remediated guidance files with remediation logs (Phase 2); ephemeral review folder deleted after acceptance
 
+### Authoring & Productivity
+
+**skill-creator**
+- Use when: Creating a skill from scratch, improving an existing one, or benchmarking trigger accuracy
+- Triggers: create skill, new skill, modify skill, improve skill, eval skill, benchmark skill
+- Output: Skill directories with SKILL.md and references, eval results
+
+**goal-writer**
+- Use when: Drafting or revising a Codex Goal file — a scoped completion contract for long-running work
+- Triggers: Codex goal, GOAL.md, goal file, completion contract, persistent objective
+- Output: Markdown goal file under `goals/`
+
+**social-media-content**
+- Use when: Drafting, brainstorming, or adapting posts for X, LinkedIn, or Instagram
+- Triggers: social media, post, tweet, LinkedIn, Instagram, thread, content calendar
+- Output: Post copy, threads, captions, posting cadence plans
+
 ---
 
 ## Common Workflows
@@ -176,6 +226,19 @@ This personal skill collection supports work across five domains:
 1. **pandas-pro** - Analyze property/market data
 2. **cre-investment-analysis** - Create investment analysis and DCF model
 3. **code-documenter** - Document assumptions and methodology
+
+### CRE Deal Underwriting
+
+**Documents → Model → Proof → Memo**
+1. **pdf** (official skill) - Extract the OM, T-12, and rent roll
+2. **cre-excel-underwriting** - Build the workbook, verify the formulas, audit the structure
+3. **cre-investment-analysis** - Write the investment memo around the verified numbers
+
+### CRE Model Review
+
+**Someone else's workbook → Findings**
+1. **cre-excel-underwriting** - Run `audit_model.py` for mechanical defects (#REF!, plugs, external links, percent-unit errors), then work the judgment checklist in `references/audit-playbook.md`
+2. **cre-dcf-valuation** - Sanity-check the valuation logic behind the numbers
 
 ### ML/AI Project
 
@@ -215,7 +278,10 @@ This personal skill collection supports work across five domains:
 - **Econometric (STATA)** → stata-accounting-research
 - **Data manipulation** → pandas-pro
 - **Financial data extraction** → wrds-data-pull
-- **Real estate investment** → cre-investment-analysis
+- **Real estate investment case** → cre-investment-analysis
+- **CRE valuation methodology** → cre-dcf-valuation
+- **CRE workbook, hand-built** → cre-excel-dcf-modeler
+- **CRE workbook, generated and verified, or auditing someone else's** → cre-excel-underwriting
 
 ### Development Tasks
 
@@ -318,10 +384,15 @@ wrds-data-pull → pandas-pro → ml-pipeline → mcp-developer → prompt-engin
 ### Real Estate
 
 - "Analyze this multifamily acquisition opportunity" → cre-investment-analysis
-- "Build DCF model for office building investment" → cre-investment-analysis
 - "Create investment memo for REIT portfolio" → cre-investment-analysis
 - "Evaluate mixed-use development feasibility" → cre-investment-analysis
-- "Perform sensitivity analysis on cap rate assumptions" → cre-investment-analysis
+- "Build DCF model for office building investment" → cre-excel-dcf-modeler
+- "Underwrite this deal from the OM and T-12" → cre-excel-underwriting
+- "Run the numbers on this industrial building" → cre-excel-underwriting
+- "Can you check this pro forma?" → cre-excel-underwriting
+- "Why is my levered IRR below my unlevered IRR?" → cre-excel-underwriting
+- "Perform sensitivity analysis on cap rate assumptions" → cre-excel-underwriting
+- "Walk me through NOI-based DCF versus corporate DCF" → cre-dcf-valuation
 
 ### AI/ML/AI Agents
 
@@ -362,7 +433,11 @@ wrds-data-pull → pandas-pro → ml-pipeline → mcp-developer → prompt-engin
 | Run econometric analysis (Python) | pyfixest-latex |
 | Run econometric analysis (STATA) | stata-accounting-research |
 | Clean and analyze data | pandas-pro |
-| Analyze CRE investment | cre-investment-analysis |
+| Analyze CRE investment / write an investment memo | cre-investment-analysis |
+| Understand CRE valuation math | cre-dcf-valuation |
+| Hand-build a CRE Excel model | cre-excel-dcf-modeler |
+| Underwrite a deal and prove the model is right | cre-excel-underwriting |
+| Audit someone else's pro forma | cre-excel-underwriting |
 | Build ML pipeline | ml-pipeline |
 | Design LLM prompts | prompt-engineer |
 | Create AI integration | mcp-developer |
@@ -375,3 +450,6 @@ wrds-data-pull → pandas-pro → ml-pipeline → mcp-developer → prompt-engin
 | Create publication figures | scientific-visualization |
 | Audit/optimize agent context | context-engineering |
 | Full guidance audit + remediation (two-phase subagents) | context-guidance-audit |
+| Create or benchmark a skill | skill-creator |
+| Write a Codex goal file | goal-writer |
+| Draft social posts | social-media-content |

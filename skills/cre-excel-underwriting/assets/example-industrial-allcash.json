@@ -1,0 +1,81 @@
+{
+  "deal": {
+    "name": "Cherokee Logistics Building 3",
+    "property_type": "industrial",
+    "address": "8100 N Mingo Valley Expy, Tulsa, OK",
+    "analysis_date": "2026-08-03"
+  },
+  "property": {
+    "rentable_sf": 312000,
+    "year_built": 2016
+  },
+  "acquisition": {
+    "purchase_price": 27000000,
+    "acquisition_cost_pct": 0.012,
+    "upfront_capex": 0
+  },
+  "revenue": {
+    "mode": "simple",
+    "market_rent_psf": 6.85,
+    "rent_growth": 0.032,
+    "vacancy_credit_loss": 0.05,
+    "other_income_annual": 0,
+    "other_income_growth": 0.0,
+    "recovery_structure": "nnn",
+    "recovery_ratio": 0.95
+  },
+  "expenses": {
+    "mode": "line_items",
+    "line_items": [
+      {
+        "name": "Real estate taxes",
+        "amount_annual": 285000,
+        "recoverable": true,
+        "growth": 0.035
+      },
+      {
+        "name": "Insurance",
+        "amount_annual": 62000,
+        "recoverable": true,
+        "growth": 0.05
+      },
+      {
+        "name": "Common area maintenance",
+        "amount_annual": 94000,
+        "recoverable": true,
+        "growth": 0.03
+      },
+      {
+        "name": "General & administrative",
+        "amount_annual": 31000,
+        "recoverable": false,
+        "growth": 0.025
+      }
+    ],
+    "management_fee_pct": 0.025,
+    "expense_growth": 0.03,
+    "capex_reserve_psf": 0.12,
+    "rollover_pct_annual": 0.12,
+    "renewal_probability": 0.75,
+    "ti_new_psf": 12,
+    "ti_renewal_psf": 4,
+    "lc_new_pct": 0.05,
+    "lc_renewal_pct": 0.025,
+    "new_lease_term_years": 7
+  },
+  "debt": {
+    "enabled": false
+  },
+  "exit": {
+    "hold_years": 5,
+    "exit_cap_rate": 0.0735,
+    "disposition_cost_pct": 0.015
+  },
+  "returns": {
+    "discount_rate": 0.075
+  },
+  "sources": {
+    "Asmp_Price": "Seller asking, 7/2026",
+    "Asmp_RentPSF": "4 submarket NNN comps signed 2025\u20132026, $6.40\u2013$7.20/SF"
+  }
+}

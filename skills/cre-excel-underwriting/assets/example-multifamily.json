@@ -1,0 +1,81 @@
+{
+  "deal": {
+    "name": "Willow Creek Apartments",
+    "property_type": "multifamily",
+    "address": "4400 S Sheridan Rd, Tulsa, OK",
+    "analysis_date": "2026-08-03"
+  },
+  "property": {
+    "units": 248,
+    "rentable_sf": 214000,
+    "year_built": 1998
+  },
+  "acquisition": {
+    "purchase_price": 34500000,
+    "acquisition_cost_pct": 0.015,
+    "upfront_capex": 1800000
+  },
+  "revenue": {
+    "mode": "unit_mix",
+    "unit_types": [
+      {
+        "name": "1BR / 1BA \u2014 680 SF",
+        "count": 96,
+        "sf": 680,
+        "rent_month": 1075
+      },
+      {
+        "name": "2BR / 2BA \u2014 950 SF",
+        "count": 116,
+        "sf": 950,
+        "rent_month": 1340
+      },
+      {
+        "name": "3BR / 2BA \u2014 1,150 SF",
+        "count": 36,
+        "sf": 1150,
+        "rent_month": 1595
+      }
+    ],
+    "market_rent_month": 1265,
+    "rent_growth": 0.03,
+    "vacancy_credit_loss": 0.08,
+    "other_income_annual": 372000,
+    "other_income_growth": 0.03,
+    "recovery_structure": "gross",
+    "recovery_ratio": 0
+  },
+  "expenses": {
+    "mode": "ratio",
+    "opex_ratio": 0.395,
+    "management_fee_pct": 0.035,
+    "expense_growth": 0.032,
+    "capex_reserve_per_unit": 300,
+    "turnover_rate": 0.45,
+    "turn_cost_per_unit": 2200
+  },
+  "debt": {
+    "enabled": true,
+    "sizing_method": "ltv",
+    "ltv": 0.62,
+    "interest_rate": 0.0575,
+    "io_years": 3,
+    "amort_years": 30,
+    "dscr_min": 1.25,
+    "debt_yield_min": 0.085
+  },
+  "exit": {
+    "hold_years": 7,
+    "exit_cap_rate": 0.0675,
+    "disposition_cost_pct": 0.0175
+  },
+  "returns": {
+    "discount_rate": 0.08
+  },
+  "sources": {
+    "Asmp_Price": "Broker OM, 6/2026; LOI executed 7/28/2026",
+    "Asmp_Units": "Rent roll dated 6/30/2026",
+    "Asmp_OpExRatio": "Trailing-12 operating statement, normalized for taxes",
+    "Asmp_Rate": "Freddie Mac SBL quote, 7/2026"
+  }
+}
