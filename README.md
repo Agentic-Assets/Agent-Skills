@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <strong>🎯 <!-- SKILL_COUNT -->24<!-- /SKILL_COUNT --> Skills</strong> • <strong>🚀 <!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows</strong> • <strong>🧠 Context Engineering</strong> • <strong>📖 Progressive Disclosure</strong>
+  <strong>🎯 <!-- SKILL_COUNT -->25<!-- /SKILL_COUNT --> Skills</strong> • <strong>🚀 <!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows</strong> • <strong>🧠 Context Engineering</strong> • <strong>📖 Progressive Disclosure</strong>
 </p>
 
 ---
@@ -75,7 +75,7 @@ Skills activate automatically based on your requests:
 
 ## Skills Overview
 
-**<!-- SKILL_COUNT -->24<!-- /SKILL_COUNT --> specialized skills** organized by domain:
+**<!-- SKILL_COUNT -->25<!-- /SKILL_COUNT --> specialized skills** organized by domain:
 
 ### 📚 PhD Academic Business Research (4 skills)
 - **academic-writing**: LaTeX manuscript drafting and revision for finance, economics, and real estate research
@@ -184,8 +184,8 @@ skills/fastapi-expert/
 4. 50% faster initial responses, surgical precision when needed
 
 **Stats:**
-- <!-- SKILL_COUNT -->24<!-- /SKILL_COUNT --> skills
-- <!-- REFERENCE_COUNT -->106<!-- /REFERENCE_COUNT --> reference files
+- <!-- SKILL_COUNT -->25<!-- /SKILL_COUNT --> skills
+- <!-- REFERENCE_COUNT -->107<!-- /REFERENCE_COUNT --> reference files
 - ~50% token reduction through progressive disclosure
 
 ---
@@ -461,4 +461,4 @@ Originally forked from [jeffallan/claude-skills](https://github.com/jeffallan/cl
 
 ---
 
-**Built for Claude Code** | **<!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows** | **<!-- REFERENCE_COUNT -->106<!-- /REFERENCE_COUNT --> Reference Files** | **<!-- SKILL_COUNT -->24<!-- /SKILL_COUNT --> Skills**
+**Built for Claude Code** | **<!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows** | **<!-- REFERENCE_COUNT -->107<!-- /REFERENCE_COUNT --> Reference Files** | **<!-- SKILL_COUNT -->25<!-- /SKILL_COUNT --> Skills**

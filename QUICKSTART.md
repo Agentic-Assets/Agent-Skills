@@ -75,7 +75,7 @@ Try these commands to verify skills are working:
 ## First Steps
 
 ### 1. Understand What You Have
-**<!-- SKILL_COUNT -->24<!-- /SKILL_COUNT --> skills** covering:
+**<!-- SKILL_COUNT -->25<!-- /SKILL_COUNT --> skills** covering:
 - **PhD Academic Research (4)**: academic-writing, pyfixest-latex, stata-accounting-research, pandas-pro
 - **Financial Analysis (3)**: wrds-data-pull, pandas-pro, pyfixest-latex
 - **Real Estate (4)**: cre-investment-analysis, cre-dcf-valuation, cre-excel-dcf-modeler, cre-excel-underwriting

@@ -4,10 +4,11 @@
 
 This personal skill collection supports work across five domains:
 
-### 📚 PhD Academic Business Research (4 skills)
+### 📚 PhD Academic Business Research (5 skills)
 - **academic-writing**: LaTeX manuscript drafting and revision for finance, economics, and real estate research
 - **pyfixest-latex**: PyFixest econometric models to publication-quality LaTeX (DiD, event studies, panel regression)
 - **stata-accounting-research**: STATA code patterns from published accounting research (entropy balancing, PSM, DiD, RDD, IV)
+- **stata-background-runner**: Silent background execution of Stata .do files on Windows, completion polling, failure diagnosis
 - **pandas-pro**: DataFrame manipulation, data cleaning, aggregation, time series analysis
 
 ### 💰 Financial Analysis & Services (2 skills)
@@ -65,6 +66,11 @@ This personal skill collection supports work across five domains:
 - Use when: Requesting STATA code patterns for empirical accounting research methods
 - Triggers: STATA, accounting research, entropy balancing, PSM, DiD, RDD, IV, Fama-MacBeth
 - Output: STATA .do files with tested syntax
+
+**stata-background-runner**
+- Use when: Running a Stata .do file on Windows, launching it silently, monitoring completion, or diagnosing errors
+- Triggers: Stata, do-file, run Stata, Windows batch, PowerShell Start-Process, StataMP, StataSE, StataIC
+- Output: PowerShell/bash launch commands, completion-polling scripts
 
 **pandas-pro**
 - Use when: Data cleaning, transformation, aggregation for research datasets
