@@ -22,8 +22,8 @@ Run a Stata do-file in batch mode, monitor the actual process, and verify the re
 ## Workflow
 
 1. Identify the operating system and shell. Read the corresponding reference below and discover the executable locally. Honor an explicit executable path; if several installations are plausible, select the intended licensed edition rather than guessing.
-2. Inspect the do-file's inputs, working-directory assumptions, dependencies, and output paths. Choose a writable working directory and a fresh run-specific log location. Do not overwrite existing research outputs without authorization.
-3. Launch batch Stata with a properly quoted absolute do-file path. Retain the process handle or PID and log location; do not infer completion from an output file appearing.
+2. Inspect the do-file's inputs, working-directory assumptions, dependencies, and output paths. Choose the working directory the analysis requires and plan a writable, non-colliding log location. Do not overwrite existing research outputs without authorization.
+3. Launch batch Stata with a properly quoted absolute do-file path; check for Stata macro characters and other unsafe path characters before launch. Retain the process handle or PID and log location; do not infer completion from an output file appearing.
 4. Wait or poll with a bounded timeout. On timeout report that the job is still running, and retain its identifier; do not kill it without authorization. Inspect the complete log and expected outputs after the process exits. A zero process exit code alone does not prove the do-file succeeded.
 5. Report the executable, working directory, log, process outcome, and verified results. Investigate errors in the log, including errors intentionally caught by `capture`; a generic text search alone cannot establish success.
 
