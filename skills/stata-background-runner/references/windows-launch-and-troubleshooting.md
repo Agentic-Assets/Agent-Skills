@@ -1,93 +1,40 @@
-# Running Stata 18 on Windows: Silent Background Execution
+# Windows batch execution
 
-## Finding the executable
+## Discover the executable
 
-Stata MP and SE use different executables. Check what is installed:
+In PowerShell, check an explicit user-provided executable first, then `Get-Command StataMP-64.exe, StataSE-64.exe, StataBE-64.exe, StataIC-64.exe -ErrorAction SilentlyContinue`. If needed, inspect Stata installation folders under both `$env:ProgramFiles` and `${env:ProgramFiles(x86)}`, as well as the user's custom install location. Names and versions vary. Select the intended licensed edition when several exist; do not assume `C:\Program Files\Stata18` or print license information.
 
-```bash
-powershell.exe -Command "Get-ChildItem 'C:\Program Files\Stata18\' -Filter 'Stata*.exe'"
+## Launch and monitor
+
+Use native PowerShell syntax from PowerShell. From bash, invoke a `.ps1` file with `powershell.exe -NoProfile -File ...` (or `pwsh` if installed); do not paste PowerShell cmdlets directly into bash. The following is a PowerShell example; substitute discovered absolute paths and a writable working directory. Use a fresh directory only if the analysis does not depend on a project working directory; otherwise use the required directory and check for a batch-log collision before launching:
+
+```powershell
+$stataExe = 'C:\path\discovered\StataMP-64.exe'
+$doFile = 'C:\absolute path\analysis.do'
+$runDir = 'C:\absolute path\new-run-directory'
+# Reject Stata macro delimiters and quotes until the path is safely handled.
+if ($doFile -match '[`$"'']|[\r\n]') { throw 'Unsupported do-file path characters; resolve safely before launch.' }
+# Start-Process joins ArgumentList, so the literal quotes protect spaces for Stata.
+$arguments = '/e do "{0}"' -f $doFile
+$process = Start-Process -FilePath $stataExe -ArgumentList $arguments `
+    -WorkingDirectory $runDir -WindowStyle Hidden -PassThru
+"Stata PID: $($process.Id)"
+# Wait at most one hour; the process is left running on timeout.
+if ($process.WaitForExit(3600000)) {
+    $process.Refresh()
+    "Process exit status: $($process.ExitCode)"
+} else {
+    "Still running; PID: $($process.Id)"
+}
 ```
 
-Common names: `StataMP-64.exe`, `StataSE-64.exe`, `StataIC-64.exe`. Use whichever is present.
+Stata's `/e` batch mode exits without the `/b` completion dialog. `-WindowStyle Hidden` requests a hidden window; GUI behavior can differ by environment and should be verified locally. The batch log normally has the do-file basename and `.log` in the working directory. Check the actual log and expected results after process exit; process status alone is not reliable proof of analysis success. Keep logs private because their headers may contain license information.
 
-## The launch command
+## Troubleshooting and portability
 
-```bash
-powershell.exe -Command "Start-Process \
-  -FilePath 'C:\Program Files\Stata18\StataMP-64.exe' \
-  -ArgumentList '/e do \"C:\full\absolute\path\to\script.do\"' \
-  -WindowStyle Hidden"
-```
-
-Key rules:
-- **Always use an absolute path** to the do-file: relative paths cause `command E is unrecognized r(199)`
-- **`-WindowStyle Hidden`** suppresses the GUI; `/e` alone does not
-- **Inner quotes** around the do-file path need backslash-escaping inside the PowerShell string: `\"`
-
-## Monitoring for completion
-
-Stata gives no completion signal to the shell. Poll for an expected output file:
-
-```bash
-powershell.exe -Command "
-  \$target = 'C:\full\path\to\expected_output_file.tex'
-  while (-not (Test-Path \$target)) { Start-Sleep -Seconds 30 }
-  Write-Host 'Done'
-"
-```
-
-Choose the **last file the script writes** as the target, not an early one: a file appearing mid-run will give a false "done" signal.
-
-## Common failure modes
-
-| Symptom | Cause | Fix |
-|---------|-------|-----|
-| `Start-Process: command not found` | Called from bash without `powershell.exe -Command` | Wrap in `powershell.exe -Command "..."` |
-| `command E is unrecognized r(199)` | Relative path; Stata read the drive letter as a command | Use full absolute path |
-| GUI window appears | `/e` without `-WindowStyle Hidden` | Add `-WindowStyle Hidden` |
-| `executable not found` | Wrong Stata edition name | Check actual `.exe` name with the `Get-ChildItem` command above |
-| Script runs but no output | Globals not set, or wrong working directory inside the do-file | Verify all `global` path definitions at the top of the do-file |
-
-## Laptop / machine portability
-
-If a do-file contains multiple laptop blocks (e.g., `global base "C:\Users\alice\..."` and `global base "C:\Users\bob\..."`), ensure exactly **one block is uncommented** before running. A common pattern is to wrap each block in comments and only activate the one matching the current machine.
-
-## Standalone wrapper scripts
-
-For analyses that are part of a larger pipeline, prefer creating a small standalone do-file that:
-1. Sets all globals
-2. Loads its own data (does not depend on prior `use` commands in memory)
-3. Runs only the analyses needed
-
-This avoids re-running expensive upstream steps. Example structure:
-
-```stata
-* my_analysis_wrapper.do
-global base   "C:\Users\you\Dropbox\MyProject"
-global tables "${base}\Output\Tables"
-global figures "${base}\Output\Figures"
-cap mkdir "${tables}"
-cap mkdir "${figures}"
-
-cd "${base}\Data"
-use my_dataset, clear
-
-* ... analysis code ...
-```
-
-## Full example
-
-```bash
-# Launch silently
-powershell.exe -Command "Start-Process \
-  -FilePath 'C:\Program Files\Stata18\StataMP-64.exe' \
-  -ArgumentList '/e do \"C:\Users\you\Projects\MyStudy\DoFiles\run_analysis.do\"' \
-  -WindowStyle Hidden"
-
-# Monitor for the last output file
-powershell.exe -Command "
-  \$target = 'C:\Users\you\Projects\MyStudy\Output\Tables\main_results.tex'
-  while (-not (Test-Path \$target)) { Start-Sleep -Seconds 30 }
-  Write-Host 'Analysis complete'
-"
-```
+- **Executable not found:** discover the actual installed edition and version, including custom locations.
+- **Path errors:** ensure literal quotes reach Stata around paths containing spaces; `Start-Process` joins argument arrays into a command line. Stata macro delimiters such as `$` and backticks, quotes, and line breaks require separate handling: use a tested Stata-safe encoding or a safely named wrapper that preserves path-dependent behavior.
+- **No log or `r(608)`:** use a writable working directory; do not launch with the protected installation directory as the working directory.
+- **Unexpected output location or missing inputs:** inspect the do-file's `cd`, globals, dependencies, and machine-specific paths. Resolve paths for the current machine instead of blindly enabling a different user's block.
+- **Errors in log:** inspect context, including intentionally captured errors, and rerun with a fresh log after fixing the cause, preserving the required working directory. An early output or `end of do-file` is not a success signal.
+- **Job still running:** retain its process ID and log; do not terminate it without authorization. If a process handle is lost, PID reuse limits what a later PID check can prove.

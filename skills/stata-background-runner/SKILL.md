@@ -1,16 +1,15 @@
 ---
 name: stata-background-runner
-description: Use when running a Stata .do file on Windows - launching it silently in the background, polling for completion, or diagnosing failures like GUI windows appearing, relative-path errors, or wrong-executable errors.
+description: Use when running or troubleshooting Stata do-files in the background on macOS or Windows.
 triggers:
   - Stata
   - do-file
-  - .do file
-  - run Stata
-  - Windows batch
-  - PowerShell Start-Process
+  - background Stata
+  - Stata batch
+  - macOS Stata
+  - Windows Stata
   - StataMP
   - StataSE
-  - StataIC
 role: specialist
 scope: implementation
 output-format: code
@@ -18,30 +17,23 @@ output-format: code
 
 # Stata Background Runner
 
-Run Stata 18 do-files on Windows silently from a bash-based agent shell, monitor them for completion, and recover from the common failure modes.
+Run a Stata do-file in batch mode, monitor the actual process, and verify the result on the current computer. Use the installed Stata version and licensed edition; do not assume a fixed version, username, installation path, shell, or operating system.
 
-## Why this is not obvious
+## Workflow
 
-Claude Code runs in a bash shell. PowerShell cmdlets like `Start-Process` cannot be called directly from bash — they fail with `command not found`. The correct pattern wraps everything in `powershell.exe -Command "..."`.
+1. Identify the operating system and shell. Read the corresponding reference below and discover the executable locally. Honor an explicit executable path; if several installations are plausible, select the intended licensed edition rather than guessing.
+2. Inspect the do-file's inputs, working-directory assumptions, dependencies, and output paths. Choose the working directory the analysis requires and plan a writable, non-colliding log location. Do not overwrite existing research outputs without authorization.
+3. Launch batch Stata with a properly quoted absolute do-file path; check for Stata macro characters and other unsafe path characters before launch. Retain the process handle or PID and log location; do not infer completion from an output file appearing.
+4. Wait or poll with a bounded timeout. On timeout report that the job is still running, and retain its identifier; do not kill it without authorization. Inspect the complete log and expected outputs after the process exits. A zero process exit code alone does not prove the do-file succeeded.
+5. Report the executable, working directory, log, process outcome, and verified results. Investigate errors in the log, including errors intentionally caught by `capture`; a generic text search alone cannot establish success.
 
-Stata's `/e` batch flag suppresses interactive prompts but still opens a visible window; `-WindowStyle Hidden` is required to run truly silently.
+For long jobs, use a fresh completion marker written only after the intended final operation succeeds, in addition to process and log inspection. A marker from a previous run, an intermediate output, or an `end of do-file` line is not proof of success. Do not alter the analysis merely to create a marker without preserving its semantics.
 
-## Core workflow
+## References
 
-1. Find the installed Stata executable (`StataMP-64.exe`, `StataSE-64.exe`, or `StataIC-64.exe`).
-2. Launch it with `Start-Process` via `powershell.exe -Command`, using an absolute path to the do-file and `-WindowStyle Hidden`.
-3. Poll for the **last** file the script writes to detect completion — Stata gives no shell-level completion signal.
-4. On failure, match the symptom against the common failure modes table.
-5. For pipeline work, prefer a standalone wrapper do-file that sets its own globals and loads its own data.
+| Platform | Read when |
+| --- | --- |
+| [macOS launch and troubleshooting](references/macos-launch-and-troubleshooting.md) | Running from a Mac terminal or agent shell |
+| [Windows launch and troubleshooting](references/windows-launch-and-troubleshooting.md) | Running from PowerShell, Windows Terminal, or a Windows bash shell |
 
-## Constraints
-
-- MUST use an absolute path to the do-file; relative paths cause `command E is unrecognized r(199)`.
-- MUST pass `-WindowStyle Hidden`; `/e` alone still opens a visible window.
-- MUST escape inner quotes around the do-file path inside the PowerShell string (`\"`).
-- MUST poll for the last output file the script writes, not an early one — an early file gives a false "done" signal.
-- MUST NOT call PowerShell cmdlets directly from bash; always wrap in `powershell.exe -Command "..."`.
-
-## Reference
-
-- [Windows launch, monitoring, and failure modes](references/windows-launch-and-troubleshooting.md) — full launch command, monitoring pattern, failure-mode table, machine-portability handling, and a complete worked example.
+Stata's own [Mac batch guidance](https://www.stata.com/support/faqs/mac/advanced-topics/) and [Windows batch guidance](https://www.stata.com/support/faqs/windows/batch-mode/) describe the platform modes.

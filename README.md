@@ -185,7 +185,7 @@ skills/fastapi-expert/
 
 **Stats:**
 - <!-- SKILL_COUNT -->25<!-- /SKILL_COUNT --> skills
-- <!-- REFERENCE_COUNT -->107<!-- /REFERENCE_COUNT --> reference files
+- <!-- REFERENCE_COUNT -->108<!-- /REFERENCE_COUNT --> reference files
 - ~50% token reduction through progressive disclosure
 
 ---
@@ -461,4 +461,4 @@ Originally forked from [jeffallan/claude-skills](https://github.com/jeffallan/cl
 
 ---
 
-**Built for Claude Code** | **<!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows** | **<!-- REFERENCE_COUNT -->107<!-- /REFERENCE_COUNT --> Reference Files** | **<!-- SKILL_COUNT -->25<!-- /SKILL_COUNT --> Skills**
+**Built for Claude Code** | **<!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows** | **<!-- REFERENCE_COUNT -->108<!-- /REFERENCE_COUNT --> Reference Files** | **<!-- SKILL_COUNT -->25<!-- /SKILL_COUNT --> Skills**
