@@ -8,7 +8,7 @@ This personal skill collection supports work across five domains:
 - **academic-writing**: LaTeX manuscript drafting and revision for finance, economics, and real estate research
 - **pyfixest-latex**: PyFixest econometric models to publication-quality LaTeX (DiD, event studies, panel regression)
 - **stata-accounting-research**: STATA code patterns from published accounting research (entropy balancing, PSM, DiD, RDD, IV)
-- **stata-background-runner**: Silent background execution of Stata .do files on Windows, completion polling, failure diagnosis
+- **stata-background-runner**: Background execution of Stata .do files on macOS and Windows, monitoring, and failure diagnosis
 - **pandas-pro**: DataFrame manipulation, data cleaning, aggregation, time series analysis
 
 ### 💰 Financial Analysis & Services (2 skills)
@@ -68,9 +68,9 @@ This personal skill collection supports work across five domains:
 - Output: STATA .do files with tested syntax
 
 **stata-background-runner**
-- Use when: Running a Stata .do file on Windows, launching it silently, monitoring completion, or diagnosing errors
-- Triggers: Stata, do-file, run Stata, Windows batch, PowerShell Start-Process, StataMP, StataSE, StataIC
-- Output: PowerShell/bash launch commands, completion-polling scripts
+- Use when: Running or troubleshooting Stata do-files in the background on macOS or Windows
+- Triggers: Stata, do-file, background Stata, Stata batch, macOS Stata, Windows Stata, StataMP, StataSE
+- Output: Platform-specific launch commands, process monitoring, and result verification
 
 **pandas-pro**
 - Use when: Data cleaning, transformation, aggregation for research datasets
